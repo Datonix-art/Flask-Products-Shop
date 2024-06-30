@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <section class="checkout">
+     <div class="billing_form">
+       <h1>Billing Details</h1>
+       <form action="{{ url_for('core.base') }}" method="post" id="checkoutForm">
+         <div>
+           {{ form.first_name.label() }}
+           {{ form.first_name() }}
+         </div>
+         <div>
+           {{ form.company_name.label() }}
+           {{ form.company_name() }}
+         </div>
+         <div>
+           {{ form.street_address.label() }}
+           {{ form.street_address() }}
+         </div>
+         <div>
+           {{ form.apartment.label() }}
+           {{ form.apartment() }}
+         </div>
+         <div>
+           {{ form.town_city.label() }}
+           {{ form.town_city() }}
+         </div>
+         <div>
+           {{ form.number.label() }}
+           {{ form.number() }}
+         </div>
+         <div>
+           {{ form.email.label() }}
+           {{ form.email() }}
+        </div>     
+        <span>
+          <input type="checkbox" id="checkbox" class="checkbox">
+          <label for="checkbox">Save this information for faster check-out next time</label>
+        </span>
+      </form>
+     </div>
+     
+     <div class="billing_details">
+       <section class="cart_items">
+         {% for item in cart %}
+           <div class="item">
+            <a href="/product_details/{{ item.product_id }}" class="product">
+              <img src="{{ url_for('static', filename='images/product_images/' + item.image )}}" alt="item image" width="70" height="70">{{ item.name |  truncate(15)}}
+            </a>
+             <p>${{ item.price * item.amount}}</p>
+           </div>
+         {% endfor %}
+       </section>
+       <section class="checkout_total">
+        <div class="container">
+          <div class="info">
+           <p>SubTotal</p>
+           <p>${{ total_price }}</p>
+          </div>
+          <span class="line"></span>
+          <div class="info">
+            <p>Shipping</p>
+            <p>Free</p>
+          </div>
+          <span class="line"></span>
+          <div class="info">
+            <p>Total:</p>
+            <p>${{ total_price }}</p>
+          </div>
+        </div>
+       </section>
+       <button type="submit" form="checkoutForm">
+        {{ form.place_order }}
+       </button>
+     </div>
+  </section>
+{% endblock%}

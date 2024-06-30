@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block content %}
+  <section id="{{ product.id }}" class="product">
+    <picture class="product_img">
+      <img src="{{ url_for('static', filename='images/product_images/' + product.image) }}" alt="{{ product.name }}" width="20" height="20">     
+    </picture>
+    <section class="product_info">
+      <hgroup>
+        <h2>{{ product.name }}</h2>
+        <h3>${{ product.price }}.00</h3>
+        <h4>{{ product.description }}</h4>
+      </hgroup>
+      <div class="line"></div>
+      <form method="post" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        <div class="form-container">
+          <div class="product_color">
+            {{ form.product_color.label() }}
+            {{ form.product_color() }}
+          </div>
+          <div class="buy_now">
+            <div class="amount">
+              {{ form.product_amount(min=1, max=100) }}
+            </div>
+            <a class="buy">
+               {{ form.Buy()}}
+            </a>
+            <div class="favorite">
+               
+            </div>
+          </div>
+        </div>
+      </form>
+      <div class="delivery">
+        
+      </div>
+    </section>
+  </section>
+{% endblock %}

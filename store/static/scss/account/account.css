@@ -1,0 +1,179 @@
+.account {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.account {
+  padding-left: 60px;
+  padding-right: 60px;
+}
+.account .flash_message {
+  padding-top: 1em;
+}
+.account .user__meeting {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  padding: 80px 0;
+  font-size: 14px;
+  color: black;
+  font-family: "Poppins";
+}
+.account .user__meeting .account-title span {
+  color: gray;
+}
+.account .user__meeting .account-user span {
+  color: #db4444;
+}
+.account .user__settings {
+  width: 100%;
+  height: 630px;
+  display: flex;
+}
+@media (max-width: 1000px) {
+  .account .user__settings {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 300px 0;
+  }
+}
+.account .user__settings .settings-options {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 30%;
+}
+@media (max-width: 1000px) {
+  .account .user__settings .settings-options {
+    text-align: center;
+    width: 100%;
+  }
+}
+.account .user__settings .settings-options section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.account .user__settings .settings-options section h2 {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+.account .user__settings .settings-options section button {
+  border: 0;
+  background: unset;
+  color: gray;
+  padding-left: 35px;
+  width: fit-content;
+  transition: color 0.3s ease-in-out;
+}
+.account .user__settings .settings-options section button:hover {
+  color: #db4444;
+}
+@media (max-width: 1000px) {
+  .account .user__settings .settings-options section button {
+    padding-left: 0;
+  }
+}
+.account .user__settings .settings {
+  width: 70%;
+}
+@media (max-width: 1000px) {
+  .account .user__settings .settings {
+    width: 100%;
+    white-space: nowrap;
+  }
+}
+.account .user__settings .settings .Profile {
+  padding: 40px 80px;
+}
+@media (max-width: 1000px) {
+  .account .user__settings .settings .Profile {
+    padding: 40px 0;
+  }
+}
+.account .user__settings .settings .Profile h1 {
+  font-size: 20px;
+  color: #db4444;
+  font-weight: 500;
+}
+@media (max-width: 1000px) {
+  .account .user__settings .settings .Profile h1 {
+    text-align: center;
+  }
+}
+.account .user__settings .settings .Profile form {
+  padding-top: 1em;
+}
+.account .user__settings .settings .Profile form .input-container {
+  white-space: nowrap;
+  display: grid;
+  grid-template-areas: "firstName lastName" "email address" "password password";
+  gap: 50px 24px;
+}
+.account .user__settings .settings .Profile form .input-container .firstName {
+  grid-area: firstName;
+}
+.account .user__settings .settings .Profile form .input-container .lastName {
+  grid-area: lastName;
+}
+.account .user__settings .settings .Profile form .input-container .email {
+  grid-area: email;
+}
+.account .user__settings .settings .Profile form .input-container .address {
+  grid-area: address;
+}
+.account .user__settings .settings .Profile form .input-container .password {
+  grid-area: password;
+}
+@media (max-width: 1000px) {
+  .account .user__settings .settings .Profile form .input-container {
+    grid-template-areas: "firstName" "lastName" "email" "address" "password";
+  }
+}
+@media (max-width: 1000px) {
+  .account .user__settings .settings .Profile form .input-container .firstName,
+  .account .user__settings .settings .Profile form .input-container .lastName,
+  .account .user__settings .settings .Profile form .input-container .email,
+  .account .user__settings .settings .Profile form .input-container .address,
+  .account .user__settings .settings .Profile form .input-container .password {
+    width: 100%;
+  }
+}
+.account .user__settings .settings .Profile form .input-container input {
+  width: 100%;
+  background-color: rgb(242, 240, 240);
+  text-indent: 1em;
+  color: gray;
+  height: 50px;
+  border: 0;
+  font-weight: 500;
+}
+.account .user__settings .settings .Profile form .input-container div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.account .user__settings .settings .Profile form .input-container .save {
+  width: 207%;
+  display: flex;
+  align-items: flex-end;
+}
+.account .user__settings .settings .Profile form .input-container .save input {
+  color: white;
+  display: block;
+  background-color: #db4444;
+  border-radius: 4px;
+  width: 214px;
+  height: 56px;
+}
+@media (max-width: 1000px) {
+  .account .user__settings .settings .Profile form .input-container .save {
+    width: 100%;
+    align-items: flex-start;
+  }
+}/*# sourceMappingURL=account.css.map */

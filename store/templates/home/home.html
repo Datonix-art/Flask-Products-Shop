@@ -1,0 +1,168 @@
+{% extends './base.html'%}
+{% block content %}
+  <section class="home">
+    <div class="flash_message">
+      {% for category, message in get_flashed_messages(with_categories=true) %}
+        <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+          {{ message }}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      {% endfor %}
+    </div>
+
+    <div class="shop_now">
+      <div class="text-container">
+        <div class="iphone-series">
+          <img src="{{ url_for('static', filename='images/1200px-Apple_gray_logo 1.png' )}}" alt="apple logo">
+          <p>{{ _('iPhone 14 Series') }}</p>
+        </div>
+        <h1>{{ _('Up to 10 percent off Voucher') }}</h1>
+        <a href="/all_products/1">{{ _('Shop Now') }}<img src="{{ url_for('static', filename='images/arrow_forward_24dp_FILL0_wght400_GRAD0_opsz24.png')}}" alt="arrow right icon" width="20" height="20"></a>
+      </div>
+      <picture>
+        <img class="iphone__image" src="{{ url_for('static', filename='images/hero_endframe__cvklg0xk3w6e_large 2.png') }}" alt="Iphone logo">
+      </picture>
+    </div>
+
+    <div class="products_flash_sales">
+      <div class="sales_title">
+        <div></div>
+        {{ _("Today's") }}
+      </div>
+      <div class="timer">
+        <h1>{{ _('Fresh Sales') }}</h1>
+        <div class="timer-container">
+          <span>
+            <h3>{{ _('Days') }}</h3>
+            <div>
+              <div id="days"></div>
+              <div class="colon">
+                :
+              </div>
+            </div>
+          </span>
+          <span>
+            <h3>{{ _('Hours') }}</h3>
+            <div>
+              <div id="hours"></div>
+              <div class="colon">
+                :
+              </div>
+            </div>
+          </span>
+          <span>
+            <h3>{{ _('Minutes') }}</h3>
+            <div>
+              <div id="minutes"></div>
+              <div class="colon">
+                :
+              </div>
+            </div>
+          </span>
+          <span>
+            <h3>{{ _('Seconds') }}</h3>
+            <div>
+              <div id="seconds"></div>
+            </div>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="all_products">
+      <div class="products-container">
+        {% for product in products %}
+          <section> 
+            <div class="image-container">
+              <div class="product_actions">
+                <div class="action-container">
+                  <a href="#">
+                    <img src="{{ url_for('static', filename='images/favorite_24dp_FILL0_wght400_GRAD0_opsz24.png') }}" alt="favorite">
+                  </a>
+                  <a href="/product_details/{{ product.id }}">
+                    <img src="{{ url_for('static', filename='images/visibility_24dp_FILL0_wght400_GRAD0_opsz24.png') }}" alt="vissibility">
+                  </a>
+                </div>
+              </div>
+              <img src="{{ url_for('static', filename='images/product_images/' + product.image) }}" alt="{{ product.name }}" class="mainImg">   
+            </div>
+            <h2>{{ product.name }}</h2>
+            <span>${{ product.price }}</span>
+            <a href="/{{ product.id }}/add_to_cart" class="cartbtn">{{ _('Add To Cart') }}</a>
+          </section>
+        {% endfor %}
+      </div>
+      <a href="/all_products/1" class="products-btn">
+        <button>
+          {{ _('View All Products') }}
+        </button>
+      </a>
+    </div>
+    
+    <div class="category">
+      <div class="category-title">
+        <div></div>
+        {{ _('Categories') }}
+      </div>
+      <h1>{{ _('Browse By Category') }}</h1>
+      <div class="category-container">
+         <a href="/category_product/1/1">
+          <img src="../../static/images/phone_iphone_48dp_FILL0_wght400_GRAD0_opsz48.png" alt="phones logo" width="60" height="60">
+          {{ _('Phones') }}
+         </a>
+         <a href="/category_product/2/1">
+          <img src="../../static/images/computer_48dp_FILL0_wght400_GRAD0_opsz48.png" alt="computers logo" width="60" height="60">
+          {{ _('Computers') }}
+         </a>
+         <a href="/category_product/3/1">
+          <img src="../../static/images/photo_camera_48dp_FILL0_wght400_GRAD0_opsz48.png" alt="camera logo" width="60" height="60">
+          {{ _('Camera') }}
+         </a>
+         <a href="/category_product/4/1">
+          <img src="../../static/images/headphones_48dp_FILL0_wght400_GRAD0_opsz48.png" alt="headhphones logo" width="60" height="60">
+          {{ _('HeadPhones') }}
+         </a>
+         <a href="/category_product/5/1">
+          <img src="../../static/images/aod_watch_48dp_FILL0_wght400_GRAD0_opsz48.png" alt="smartwatch logo" width="60" height="60">
+          {{ _('SmartWatch') }}
+         </a>
+      </div>
+    </div>
+
+    <div class="guarantee-container">
+      <section>
+        <div>
+          <div>
+            <div>
+              <img src="{{ url_for('static', filename='images/icon-delivery.png')}}" alt="delivery logo">
+            </div>
+          </div>
+        </div>
+        <h2>{{ _('FREE AND FAST DELIVERY') }}</h2>
+        <p>{{ _('Free delivery for all orders over $140') }}</p>
+      </section>
+      <section>
+        <div>
+          <div>
+            <div>
+              <img src="{{ url_for('static', filename='images/Icon-Customer service.png')}}" alt="service logo">
+            </div>
+          </div>
+        </div>
+        <h2>{{ _('24/7 CUSTOMER SERVICE') }}</h2>
+        <p>{{ _('Friendly 24/7 customer support') }}</p>
+      </section>
+      <section>
+        <div>
+          <div>
+            <div>
+              <img src="{{ url_for('static', filename='images/Icon-secure.png')}}" alt="delivery logo">
+            </div>
+          </div>
+        </div>
+        <h2>{{ _('MONEY BACK GUARANTEE') }}</h2>
+        <p>{{ _('We return money within 30 days') }}</p>
+      </section>
+    </div>
+  </section>
+{% endblock %}

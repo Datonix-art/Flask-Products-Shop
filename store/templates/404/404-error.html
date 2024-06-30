@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+  <section class="error-container">
+    <h1 class="error-title"><span>{{ _('Home /') }}</span>{{ _('404 Error') }}</h1>
+    <div class="error">    
+      <strong>
+        {{ _('404 NOT FOUND') }}
+      </strong>
+      <p>{{ _('Your visited page not found. You may go home page') }}</p>
+      <a href="/home" class="error-primary-btn">
+        {{ _('Back to home page') }}
+      </a>
+    </div>
+  </section>
+{% endblock %}

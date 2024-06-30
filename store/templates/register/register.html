@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block content %}
+  <div class="flash_message">
+    {% for category, message in get_flashed_messages(with_categories=true) %}
+      <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    {% endfor %}
+  </div>
+  <section class="register">
+    <div>
+      <img src="{{ url_for('static', filename='images/Side Image.png') }}" alt="logo">
+    </div>
+    <div>
+      <h1>
+        {% if request.path == '/signup'%}
+          {{ _('Create an account') }} 
+        {% elif request.path == '/login' %}
+          {{ _('Log in to Exclusive') }}
+        {% endif %}
+      </h1>
+      <p>{{ _('Enter your details below') }}</p>
+      {% if request.path == '/signup' %}
+        <form method="post">
+          {{ form.hidden_tag() }}            
+          <div>
+            {{ form.name() }}
+            {{ form.email() }}
+            {{ form.password() }}
+            {{ form.createAcc() }}
+          </div>
+        </form>
+        <div title="redirect to login" class="login">
+          <p>{{ _('Already have account?') }}</p>
+          <a href="/login">{{ _('Log in') }}</a>
+        </div>
+      {% elif request.path == '/login' %}
+        <form method="post">
+          {{ form.hidden_tag() }}
+          <div>
+            {{ form.email() }}
+            {{ form.password() }}
+            <div>
+              {{ form.logIn() }}
+              <a href="#">
+                {{ _('Forgot Password?') }}
+              </a>
+            </div>
+          </div>
+        </form>
+      {% endif %}
+    </div>
+  </section>
+{% endblock %}

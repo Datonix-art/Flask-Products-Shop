@@ -1,0 +1,102 @@
+.category_product {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.category_product {
+  padding: 30px 60px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
+  grid-auto-rows: 350px;
+  grid-auto-flow: dense;
+  gap: 60px;
+}
+@media (max-width: 750px) {
+  .category_product {
+    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+  }
+}
+.category_product section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+}
+.category_product section .image-container {
+  width: 100%;
+  height: 65%;
+  background-color: rgb(244, 242, 242);
+  display: grid;
+  grid-auto-flow: dense;
+  justify-content: center;
+  align-items: inherit;
+  grid-template-columns: 20%;
+}
+.category_product section .image-container .product_actions {
+  display: flex;
+  flex-direction: inherit;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: nowrap;
+  width: 270%;
+  height: 70px;
+}
+.category_product section .image-container .product_actions .action-container {
+  display: flex;
+  flex-direction: column;
+}
+.category_product section .image-container .product_actions img {
+  width: 20px;
+}
+.category_product section .image-container .mainImg {
+  width: 120px;
+  translate: -30px;
+}
+@media (max-width: 750px) {
+  .category_product section .image-container .mainImg {
+    width: 100%;
+    translate: -30px -30px;
+  }
+}
+.category_product section h2 {
+  margin-top: 1em;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+.category_product section span {
+  display: block;
+  color: #db4444;
+  font-weight: 500;
+}
+.category_product section .cartbtn {
+  display: block;
+  padding: 8px 0;
+  width: 100%;
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+
+nav {
+  padding-top: 30px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+nav ul {
+  display: flex;
+  gap: 10px;
+}
+nav ul li a {
+  border-color: black !important;
+  color: black !important;
+}
+nav ul li a:hover {
+  border-color: #db4444 !important;
+  color: #db4444 !important;
+}/*# sourceMappingURL=category_product.css.map */

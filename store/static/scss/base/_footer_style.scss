@@ -1,0 +1,71 @@
+@import '../abstracts/attributes';
+@import '../abstracts/mixins';
+@import '../abstracts/placeholders';
+
+.Footer {
+  width: 100%;
+  height: 440px;
+  margin: 32px 0 0;
+  background-color: #000;
+  @include flexcenter();
+  justify-content: center;
+
+  @media (max-width: 736px) {
+    height: 100%;
+  }
+
+  .nav__container {
+    width: 100%;
+    max-width: 1170px;
+    @include flexbox(inherit, space-between, inherit, wrap);
+    gap: 20px;
+
+    @media (max-width: 736px) {
+      @include flexbox(column, center, center, nowrap);
+      text-align: center;
+      padding-top: 1em;
+    }
+
+    nav {
+      flex: 1 1 200px;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      color: #fafafa;
+
+      h2 {
+        font-weight: bold;
+        font-size: 24px;
+        font-family: $secondaryFont;
+        margin-bottom: 8px;
+      }
+      h3 {
+        font-weight: 500;
+        font-family: $primaryFont;
+        font-size: 20px;
+        margin-bottom: 8px;
+      }
+      p {
+        font-size: 1rem;
+        font-family: $primaryFont;
+        font-weight: normal;
+      }
+      input {
+        width: 90%;
+        height: 48px;
+        background-color: transparent;
+        border-radius: 4px;
+        border: solid 1.5px #fafafa;
+        color: #fafafa;
+        opacity: 0.4;
+        text-indent: 1em;
+      }
+      button {
+        background-color: transparent;
+        border: transparent;
+        position: absolute;
+        transform: translateX(-130%) translateY(10px);        
+      }
+    }
+  }
+}

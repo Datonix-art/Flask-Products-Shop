@@ -1,0 +1,54 @@
+@import '../abstracts/mixins';
+@import '../abstracts/attributes';
+@import '../abstracts/placeholders';
+
+.error-container {
+  @extend %width;
+  
+  .error-title {
+    text-indent: 135px;
+    color: black;
+    font-size: 14px;
+    margin-top: 80px;
+    font-family: $primaryFont;
+
+    span {
+      color: gray;
+    }
+  }
+
+  .error {
+    @include flexbox(column, center, center, wrap);
+    font-family: $secondaryFont;
+    width: 100%;
+    height: 500px;
+
+    strong {
+      font-size: 500%;
+      font-weight: 500;
+      color: black;
+      margin-bottom: 40px;
+      letter-spacing: 3px;
+      text-align: center;
+
+      @media (max-width: 700px) {
+        font-size: 70px;
+      }
+    }
+
+    p {
+      color: black;
+      text-align: center;
+      font-family: $primaryFont;
+      font-size: 1rem;
+      margin-bottom: 80px;
+    }
+
+    .error-primary-btn {
+      padding: 1em 3em;
+      color: white;
+      background-color: $red;
+      border-radius: 4px;
+    }
+  }
+}

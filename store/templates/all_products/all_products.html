@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block content %}
+  <div title="all products" class="products">
+    <div class="flash_message">
+      {% for category, message in get_flashed_messages(with_categories=true) %}
+        <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+          {{ message }}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      {% endfor %}
+    </div>
+    <section class="all_products">
+      <h1 class="title">{{ _('All Products') }}</h1>   
+      <div class="products-container">
+        {% for product in products %}
+          <section> 
+            <div class="image-container">
+              <div class="product_actions">
+                <div class="action-container">
+                  <a href="#">
+                    <img src="{{ url_for('static', filename='images/favorite_24dp_FILL0_wght400_GRAD0_opsz24.png') }}" alt="favorite">
+                  </a>
+                  <a href="/product_details/{{ product.id }}">
+                    <img src="{{ url_for('static', filename='images/visibility_24dp_FILL0_wght400_GRAD0_opsz24.png') }}" alt="vissibility">
+                  </a>
+                </div>
+              </div>
+              <img src="{{ url_for('static', filename='images/product_images/' + product.image) }}" alt="{{ product.name }}" class="mainImg">   
+            </div>
+            <h2>{{ product.name }}</h2>
+            <span>${{ product.price }}</span>
+            <a href="#" class="cartbtn">{{ _('Add To Cart') }}</a>
+          </section>
+        {% endfor %}
+      </div>
+    </section>
+    <nav aria-label="Product nav">
+      <ul class="pagination">
+        {% for page in products.iter_pages() %}
+        <li class="page-item"><a class="page-link" href="/all_products/{{page}}">{{ page }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
+{% endblock %}

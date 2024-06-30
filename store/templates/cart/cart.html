@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  
+  <section class="cart" id="cart">
+
+    {% if cart %}
+      <section class="flash_message">
+        {% for category, message in get_flashed_messages(with_categories=true) %}
+          <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+        {% endfor %}
+      </section>
+
+      <section class="cart__title">
+        <p>Home / <span>Cart</span></p>
+      </section>
+
+      <section class="cart__item--container">
+        
+          <table class="cart__item--table">
+            <form method="post" action="{{ url_for('cart.update_cart') }}" id="cartForm">
+             {{ form.hidden_tag() }}
+             <thead class="cart__item--title">
+               <tr class="__item--container">
+                <td>Product</td>
+                <td>Price</td>
+                <td>Quantity</td>
+                <td>SubTotal</td>
+               </tr>
+             </thead>
+             <tbody class="cart__items">
+               {% for item in cart %}
+                <tr class="__item--container">
+                  <th>
+                    <a href="/product_details/{{ item.product_id }}" class="product">
+                      <img src="{{ url_for('static', filename='images/product_images/' + item.image )}}" alt="item image" width="70" height="70">{{ item.name |  truncate(15)}}
+                    </a>
+                  </th>
+                  <th>${{ item.price }}</th>
+                  <th class="amount">
+                    {{ form.new_amount(value=item.amount, min=1, max=100) }}
+                  </th>
+                  <th>${{ item.price * item.amount }}</th>
+                </tr>
+               {% endfor %}
+             </tbody>
+            
+            </form>
+          </table>
+
+          <section class="cart__footer">
+            <div class="cart__redirects">
+                   
+                <a href="/home">
+                  Return To Shop
+                </a>
+
+                <a href="/cart/update_cart">
+                  <button type="submit" form="cartForm">Update Cart</button>
+                </a>
+            
+            </div>
+            
+            <div class="cart__checkout_redirect">
+              <section class="coupon">
+                <input type="text" placeholder="Coupon Code" min="6" max="6">
+                <button type="submit">Apply Coupon</button>
+              </section>
+
+              <section class="Cart_Total">
+                <div class="container">
+                  <h2>Cart Total</h2>
+                  <div class="info">
+                   <p>SubTotal</p>
+                   <p>${{ total_price }}</p>
+                  </div>
+                  <span class="line"></span>
+                  <div class="info">
+                    <p>Shipping</p>
+                    <p>Free</p>
+                  </div>
+                  <span class="line"></span>
+                  <div class="info">
+                    <p>Total:</p>
+                    <p>${{ total_price }}</p>
+                  </div>
+                  <div class="primaryBTN--container">
+                    <a href="/checkout" class="primaryBTN-btn">Procees to checkout</a>
+                  </div>
+                </div>
+              </section>
+            </div>
+          
+          </section>
+      
+      </section>
+    
+    {% else %}
+
+     <section>
+       <h1>No items in cart.</h1>
+      </section>
+    
+    {% endif %}
+
+  </section>
+{% endblock %}

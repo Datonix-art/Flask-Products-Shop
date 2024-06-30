@@ -1,0 +1,186 @@
+@import '../abstracts/mixins';
+@import '../abstracts/attributes';
+@import '../abstracts/placeholders';
+
+.account {
+  @extend %width;
+  padding-left: 60px;
+  padding-right: 60px;
+  
+  .flash_message {
+    padding-top: 1em
+  }
+
+  .user__meeting {
+    @include flexbox(row, space-between, center, nowrap);
+    padding: 80px 0;
+    font-size: 14px;
+    color: black;
+    font-family: $primaryFont;
+
+    .account-title span {
+      color: gray;
+    }
+    
+    .account-user span {
+      color: $red;
+    }
+  }
+
+  .user__settings {
+    width: 100%;
+    height: 630px;
+    display: flex;
+
+    @media (max-width: 1000px) {
+      flex-direction: column;  
+      justify-content: center;
+      align-items: center; 
+      margin: 300px 0;
+    }
+    
+
+    .settings-options {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      width: 30%;
+
+      @media (max-width: 1000px) {
+        text-align: center;
+        width: 100%;
+      }
+
+      section {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        
+        h2 {
+          font-size: 1rem;
+          font-weight: 500;
+          margin-bottom: 8px;
+        }
+
+        button {
+          border: 0;
+          background: unset;
+          color: gray;
+          padding-left: 35px;
+          width: fit-content;
+          transition: color .3s ease-in-out;
+
+          &:hover {
+            color: $red;
+          }
+
+          @media (max-width: 1000px) {
+            padding-left: 0;
+          }
+        }
+      }
+    }
+
+    .settings {
+      width: 70%;
+
+      @media (max-width: 1000px) {
+        width: 100%;
+        white-space: nowrap;
+      }
+
+      .Profile {
+        padding: 40px 80px; 
+
+        @media (max-width: 1000px) {
+          padding: 40px 0;
+        }
+
+        h1 {
+          font-size: 20px;
+          color: $red;
+          font-weight: 500;
+          
+          @media (max-width: 1000px) {
+            text-align: center;
+          }
+        }
+
+        form {
+          padding-top: 1em;
+
+          .input-container {
+            white-space: nowrap;
+
+            .firstName { grid-area: firstName ;}
+            .lastName { grid-area: lastName ;}
+            .email { grid-area: email ;}
+            .address { grid-area: address ;}
+            .password { grid-area: password ;}
+
+            display: grid;
+            grid-template-areas: 'firstName lastName'
+                                 'email address'
+                                 'password password';
+            
+            gap: 50px 24px;
+
+            @media (max-width: 1000px) {
+              grid-template-areas:'firstName'
+                                  'lastName'
+                                  'email'
+                                  'address'
+                                  'password';
+            }
+
+            .firstName,
+            .lastName,
+            .email,
+            .address,
+            .password {
+              @media (max-width: 1000px) {
+                width: 100%;
+              }
+            }
+          
+            input {
+              width: 100%;
+              background-color: rgb(242, 240, 240);
+              text-indent: 1em;
+              color: gray;
+              height: 50px;
+              border: 0;
+              font-weight: 500;
+            }
+
+            div {
+              display: flex;
+              flex-direction: column;
+              gap: 8px;
+            }
+
+            .save {
+              width: 207%;
+              display: flex;
+              align-items: flex-end;
+
+              input {
+                color: white;
+                display: block;
+                background-color: #db4444;
+                border-radius: 4px;
+                width: 214px;
+                height: 56px;
+              }
+
+              @media (max-width: 1000px) {
+                width: 100%;
+                align-items: flex-start;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

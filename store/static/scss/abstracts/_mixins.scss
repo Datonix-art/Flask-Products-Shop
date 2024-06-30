@@ -1,0 +1,20 @@
+@mixin flexcenter($flexDirect: row){
+  display: flex;
+  flex-direction: $flexDirect;
+  align-items: center;
+}
+
+@mixin flexbox($flxDirect: column, $flxJustify: space-evenly, $flxAlign: center, $flxWrap: nowrap) {
+  display: flex;
+  flex-direction: $flxDirect;
+  justify-content: $flxJustify;
+  align-items: $flxAlign;
+  flex-wrap: $flxWrap;
+}
+
+@mixin gridcenter($gridJustify: center, $gridAlign: center, $gridFlow: column) {
+  display: grid;
+  grid-auto-flow: $gridFlow;
+  justify-content: $gridJustify;
+  align-items: $gridAlign;
+}

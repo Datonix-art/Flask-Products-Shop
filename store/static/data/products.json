@@ -1,0 +1,278 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "category_id": 1,
+      "name": "Samsung Galaxy S24 S921B 5G 8/128GB Amber Yellow",
+      "slug": "Samsung-Galaxy-S24-S921B-5G-8/128GB-Amber-Yellow",
+      "description": "The Galaxy S24 series features a 'Dynamic AMOLED 2X' display with HDR10+ support, 2600 nits of peak brightness, and 'dynamic tone mapping' technology.",
+      "image": "s24yellow-1_dsdd_d2342342_ddfdfdf.jpg",
+      "price": 722,
+      "amount": 1
+    },
+    {
+      "id": 2,
+      "category_id": 4,
+      "name": "Sony INZONE H9 Wireless Gaming Headset White",
+      "slug": "Sony-INZONE-H9-Wireless-Gaming-Headset-White",
+      "description": "immerses you in the zone with spatial sound and noise cancelling for supercharged hearing and super sharp reflexes.",
+      "image": "61CZSoSnVPL._AC_SL1500_.jpg",
+      "price": 250,
+      "amount": 1
+    },
+    {
+      "id": 3,
+      "category_id": 2,
+      "name": "Acer Nitro 15 ANV15-51-75SY NH.QQEER.004 Black",
+      "slug": "Acer-Nitro-15-ANV15-51-75SY-NH.QQEER.004-Black",
+      "description": "This model has an old Nvidia RTX 2050 GPU and a 13th-gen Intel Core i5 CPU",
+      "image": "536437.jpg",
+      "price": 1099,
+      "amount": 1
+    },
+    {
+      "id": 4,
+      "category_id": 3,
+      "name": "Canon EOS R5 C Mirrorless Cinema Camera Kit",
+      "slug": "Canon-EOS-R5-C-Mirrorless-Cinema-Camera-Kit",
+      "description": "The EOS R5 C Mirrorless Cinema Camera Kit with RF 24-70mm f/2.8 Lens combines a dual-purpose, full-featured still photo and full-frame cinema camera with a fast, high-quality zoom lens in one package. This pro imaging kit comprises the EOS R5 C mirrorless photo and video cinema camera and the RF 24-70mm f/2.8 L IS USM lens.",
+      "image": "1687959055_IMG_2029250.jpg",
+      "price": 3300,
+      "amount": 1
+    },
+    {
+      "id": 5,
+      "category_id": 5,
+      "name": "Fitbit Versa 4 Fitness Smartwatch with Daily Readiness",
+      "slug": "Fitbit-Versa-4-Fitness-Smartwatch-with-Daily-Readiness",
+      "description": " Fitbit Versa 4 Fitness Smartwatch with Daily Readiness, GPS, 24/7 Heart Rate, 40+ Exercise Modes, Sleep Tracking and more, Black/Graphite, One Size (S & L Bands Included) ",
+      "image": "1_qor2-85.png.jpg",
+      "price": 199,
+      "amount": 1
+    },
+    {
+      "id": 6,
+      "category_id": 1,
+      "name": "Apple iPhone 14 Pro Max 256GB Space Black",
+      "slug": "Apple-iPhone-14-Pro-Max-256GB-Space-Black",
+      "description": "The iPhone 14 Pro Max features a 6.7-inch Super Retina XDR display, ProMotion technology, and A16 Bionic chip for top-notch performance.",
+      "image": "Apple-iphone-14-pro-max-256GB-space-black-front-back-view-Model-Image.png",
+      "price": 1199,
+      "amount": 1
+  },
+  {
+      "id": 7,
+      "category_id": 1,
+      "name": "Google Pixel 7 Pro 5G 12/256GB Obsidian",
+      "slug": "Google-Pixel-7-Pro-5G-12/256GB-Obsidian",
+      "description": "The Google Pixel 7 Pro offers a 6.7-inch QHD+ display, Google Tensor G2 chip, and a versatile camera system with advanced AI capabilities.",
+      "image": "51OFxuD1GgL._AC_UF1000,1000_QL80_.jpg",
+      "price": 899,
+      "amount": 1
+  },
+  {
+      "id": 8,
+      "category_id": 1,
+      "name": "OnePlus 11 5G 16/512GB Emerald Green",
+      "slug": "OnePlus-11-5G-16/512GB-Emerald-Green",
+      "description": "The OnePlus 11 comes with a 6.55-inch Fluid AMOLED display, Snapdragon 8 Gen 1 processor, and Warp Charge 65T for ultra-fast charging.",
+      "image": "61amb0CfMGL._AC_UF1000,1000_QL80_.jpg",
+      "price": 799,
+      "amount": 1
+  },
+  {
+      "id": 9,
+      "category_id": 1,
+      "name": "Sony Xperia 1 IV 5G 12/256GB Frosted Black",
+      "slug": "Sony-Xperia-1-IV-5G-12/256GB-Frosted-Black",
+      "description": "The Xperia 1 IV features a 6.5-inch 4K HDR OLED display, triple camera system with ZEISS optics, and advanced gaming capabilities.",
+      "image": "81YofuHBMZL._AC_UL600_SR600,600_.jpg",
+      "price": 1199,
+      "amount": 1
+  },
+  {
+      "id": 10,
+      "category_id": 1,
+      "name": "Xiaomi Mi 13 Ultra 5G 12/512GB Ceramic White",
+      "slug": "Xiaomi-Mi-13-Ultra-5G-12/512GB-Ceramic-White",
+      "description": "The Xiaomi Mi 13 Ultra boasts a 6.81-inch AMOLED display, Snapdragon 8 Gen 2, and a quad-camera setup with Leica optics for stunning photography.",
+      "image": "images_xiamoni_Mi_13_ulta.jpg",
+      "price": 999,
+      "amount": 1
+  },
+  {
+    "id": 11,
+    "category_id": 4,
+    "name": "Bose QuietComfort 45 Wireless Headphones Black",
+    "slug": "Bose-QuietComfort-45-Wireless-Headphones-Black",
+    "description": "Experience world-class noise cancellation, high-fidelity audio, and all-day comfort with the Bose QuietComfort 45.",
+    "image": "0160008_bose-quietcomfort-45-wireless-headphones-black_550.jpeg",
+    "price": 329,
+    "amount": 1
+  },
+  {
+      "id": 12,
+      "category_id": 4,
+      "name": "Apple AirPods Max Silver",
+      "slug": "Apple-AirPods-Max-Silver",
+      "description": "Apple AirPods Max offers high-fidelity audio, active noise cancellation, and a premium design for an unparalleled listening experience.",
+      "image": "583336-apple-airpods-max-silver.jpeg",
+      "price": 549,
+      "amount": 1
+  },
+  {
+      "id": 13,
+      "category_id": 4,
+      "name": "Sennheiser HD 660 S Over-Ear Headphones",
+      "slug": "Sennheiser-HD-660-S-Over-Ear-Headphones",
+      "description": "Sennheiser HD 660 S delivers reference-class sound, with enhanced precision and dynamics, ideal for audiophiles and music professionals.",
+      "image": "63ea4cf1596bd36f1129e932-sennheiser-hd-660-s-open-over-ear.jpg",
+      "price": 499,
+      "amount": 1
+  },
+  {
+      "id": 14,
+      "category_id": 4,
+      "name": "SteelSeries Arctis Pro Wireless Gaming Headset",
+      "slug": "SteelSeries-Arctis-Pro-Wireless-Gaming-Headset",
+      "description": "The Arctis Pro Wireless combines lossless high fidelity audio with dual wireless technology for gaming, music, and movies.",
+      "image": "f359857a516d4d1ab4b50ec1bcdbc6c4.png.500x400_q100_crop-fit_optimize.png",
+      "price": 349,
+      "amount": 1
+  },
+  {
+    "id": 15,
+    "category_id": 2,
+    "name": "Dell XPS 13 9310 Touchscreen Laptop Silver",
+    "slug": "Dell-XPS-13-9310-Touchscreen-Laptop-Silver",
+    "description": "The Dell XPS 13 features a 13.4-inch FHD+ touchscreen display, 11th-gen Intel Core i7 processor, and Intel Iris Xe graphics.",
+    "image": "81ipIgod3KL._AC_SL1500_.jpg",
+    "price": 1499,
+    "amount": 1
+  },
+  {
+      "id": 16,
+      "category_id": 2,
+      "name": "Apple MacBook Pro 16-inch M2 Pro Space Gray",
+      "slug": "Apple-MacBook-Pro-16-inch-M2-Pro-Space-Gray",
+      "description": "The MacBook Pro 16-inch with M2 Pro chip offers unmatched performance, a stunning Retina display, and all-day battery life.",
+      "image": "refurb-mbp16-m2-spacegray-202303.jpg",
+      "price": 2499,
+      "amount": 1
+  },
+  {
+      "id": 17,
+      "category_id": 2,
+      "name": "HP Spectre x360 14 2-in-1 Laptop Nightfall Black",
+      "slug": "HP-Spectre-x360-14-2-in-1-Laptop-Nightfall-Black",
+      "description": "The HP Spectre x360 14 features a 13.5-inch OLED display, 12th-gen Intel Core i7 processor, and a versatile 2-in-1 design.",
+      "image": "1-198122162147.jpg",
+      "price": 1799,
+      "amount": 1
+  },
+  {
+    "id": 18,
+    "category_id": 3,
+    "name": "Sony Alpha a7 III Mirrorless Digital Camera",
+    "slug": "Sony-Alpha-a7-III-Mirrorless-Digital-Camera",
+    "description": "The Sony Alpha a7 III features a full-frame 24.2MP BSI image sensor, 4K HDR video recording, and a 5-axis in-body image stabilization system.",
+    "image": "s-l1600.jpg",
+    "price": 1999,
+    "amount": 1
+  },
+  {
+    "id": 19,
+    "category_id": 3,
+    "name": "Nikon Z6 II Mirrorless Camera with 24-70mm Lens",
+    "slug": "Nikon-Z6-II-Mirrorless-Camera-with-24-70mm-Lens",
+    "description": "The Nikon Z6 II offers a 24.5MP FX-format BSI CMOS sensor, dual EXPEED 6 processors, and a versatile 24-70mm f/4 S lens for high-quality imaging.",
+    "image": "images_nikon.jpg",
+    "price": 2599,
+    "amount": 1
+  },
+  {
+    "id": 20,
+    "category_id": 3,
+    "name": "Panasonic Lumix GH5 II Mirrorless Camera",
+    "slug": "Panasonic-Lumix-GH5-II-Mirrorless-Camera",
+    "description": "The Panasonic Lumix GH5 II is designed for professional video production, featuring a 20.3MP Digital Live MOS sensor and unlimited 4K video recording.",
+    "image": "81jOjfJll3L._AC_UF894,1000_QL80_.jpg",
+    "price": 1699,
+    "amount": 1
+  },
+  {
+    "id": 21,
+    "category_id": 3,
+    "name": "Fujifilm X-T4 Mirrorless Digital Camera",
+    "slug": "Fujifilm-X-T4-Mirrorless-Digital-Camera",
+    "description": "The Fujifilm X-T4 offers a 26.1MP APS-C X-Trans CMOS 4 sensor, in-body image stabilization, and DCI 4K60 video recording, making it a versatile choice for photographers and videographers.",
+    "image": "71BsdiTzEoL.jpg",
+    "price": 1699,
+    "amount": 1
+  },
+  {
+    "id": 22,
+    "category_id": 5,
+    "name": "Apple Watch Series 8 GPS 45mm Midnight Aluminum Case",
+    "slug": "Apple-Watch-Series-8-GPS-45mm-Midnight-Aluminum-Case",
+    "description": "The Apple Watch Series 8 features advanced health sensors, a larger always-on Retina display, and improved durability for an optimal smartwatch experience.",
+    "image": "images_watch_apple.jpg",
+    "price": 429,
+    "amount": 1
+  },
+  {
+    "id": 23,
+    "category_id": 5,
+    "name": "Samsung Galaxy Watch 5 Pro 45mm LTE",
+    "slug": "Samsung-Galaxy-Watch-5-Pro-45mm-LTE",
+    "description": "The Samsung Galaxy Watch 5 Pro offers a robust design, advanced health tracking, long battery life, and LTE connectivity for ultimate freedom.",
+    "image": "1_6yhj-5n.png",
+    "price": 499,
+    "amount": 1
+  },
+  {
+    "id": 24,
+    "category_id": 5,
+    "name": "Garmin Fenix 7X Solar Multisport GPS Watch",
+    "slug": "Garmin-Fenix-7X-Solar-Multisport-GPS-Watch",
+    "description": "The Garmin Fenix 7X Solar offers solar charging, rugged design, advanced health and fitness features, and comprehensive GPS tracking.",
+    "image": "6147JhzkWdL.jpg",
+    "price": 899,
+    "amount": 1
+  },
+  {
+    "id": 25,
+    "category_id": 5,
+    "name": "Amazfit GTR 3 Pro Smartwatch",
+    "slug": "Amazfit-GTR-3-Pro-Smartwatch",
+    "description": "The Amazfit GTR 3 Pro features a 1.45-inch AMOLED display, 150+ sports modes, advanced health tracking, and a long-lasting battery life.",
+    "image": "635837b975c96f67ea031706-amazfit-gtr-3-pro-limited-edition-smart.jpg",
+    "price": 229,
+    "amount": 1
+  }
+  ],
+  "category": [
+    {
+      "id": 1,
+      "name": "phones"
+    },
+    {
+      "id": 2,
+      "name": "computers"
+    },
+    {
+      "id": 3,
+      "name": "camera"
+    },
+    {
+      "id": 4,
+      "name": "headhphones"
+    },
+    {
+      "id": 5,
+      "name": "smartwatch"
+    }
+  ]
+}
+
+

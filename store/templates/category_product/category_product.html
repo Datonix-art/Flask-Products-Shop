@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <section class="category_product">
+    {% for product in category_product %}
+      <section class="{{ product.id }}"> 
+        <div class="image-container">
+          <div class="product_actions">
+            <div class="action-container">
+              <a href="#">
+                <img src="{{ url_for('static', filename='images/favorite_24dp_FILL0_wght400_GRAD0_opsz24.png') }}" alt="favorite">
+              </a>
+              <a href="/product_details/{{ product.id }}">
+                <img src="{{ url_for('static', filename='images/visibility_24dp_FILL0_wght400_GRAD0_opsz24.png') }}" alt="vissibility">
+              </a>
+            </div>
+          </div>
+          <img src="{{ url_for('static', filename='images/product_images/' + product.image) }}" alt="{{ product.name }}" class="mainImg">   
+        </div>
+        <h2>{{ product.name }}</h2>
+        <span>${{ product.price }}</span>
+        <a href="/{{product.id}}/add_to_cart" class="cartbtn">{{ _('Add To Cart') }}</a>
+      </section>
+    {% endfor %}
+  </section>
+  <div>
+    <nav aria-label="Category product navigation">
+      <ul class="pagination">
+        {% for page in category_product.iter_pages() %}
+          <li class="page-item"><a class="page-link" href="/category_product/{{ category.id }}/{{ page }}">{{ page }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
+{% endblock %}

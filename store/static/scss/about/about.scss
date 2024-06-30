@@ -1,0 +1,197 @@
+@import '../abstracts/mixins';
+@import '../abstracts/attributes';
+@import '../abstracts/placeholders';
+
+.about {
+ @extend %width;
+
+  .about-title {
+    padding-bottom: 40px;
+    padding-left: 60px;
+    color: black;
+    font-size: 14px;
+    margin-top: 80px;
+    font-family: $primaryFont;
+
+    span {
+      color: gray;
+    }
+  }
+
+  .story-container {
+    @include gridcenter();
+    grid-auto-columns: 50%;
+    max-width: 1440px;
+
+    @media (max-width: 815px) {
+      grid-auto-flow: dense;
+      gap: 30px;
+    }
+    
+    article {
+      width: 80%;
+      padding-left: 60px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+
+      @media (max-width: 815px) {
+        text-align: center;
+        flex-wrap: wrap;
+      }
+
+      @media (max-width: 450px) {
+        padding-left: 0;
+        padding-right: 30px;
+      }
+
+      h1 {
+        font-family: $secondaryFont;
+        color: black;
+        font-weight: 600;
+        font-size: 50px;
+        letter-spacing: 3.24px;
+
+        @media (max-width: 820px) {
+          font-size: 30px;
+          font-weight: bold;
+        }
+      }
+
+      p {
+        line-height: 1.63;
+        @media (max-width: 820px) {
+          font-size: 14px;
+        }      
+
+        @media (max-width: 450px) {
+          width: 150%;
+        }
+      }
+    }
+
+    aside img {
+      width: 100%;
+    }
+  }
+
+  .development-container {
+    padding: 140px 0;
+    display: grid;
+    grid-template-columns: repeat(4, calc(25% - 17.5px));
+    grid-auto-flow: column;
+    justify-content: space-evenly;
+
+    @media (max-width: 980px) {
+      grid-template-columns: repeat(2, 30%); 
+      grid-template-rows: repeat(2, auto); 
+      gap: 20px;
+    }
+    
+
+    section {
+      @include flexcenter(column);
+      justify-content: center;
+      border-radius: 4px;
+      border: solid 1px rgba(0, 0, 0, 0.3);      
+      gap: 1em;
+      height: 230px;
+      text-align: center;
+
+      div {
+        width: 80px;
+        height: 80px;
+        border-radius: 50px;
+        background-color: lightgray;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        div {
+         background-color: black;
+         border-radius: 50px;
+         width: 60px;
+         height: 60px;
+        }
+      }
+
+      h2 {
+        font-size: 32px;
+        font-weight: bold;
+        line-height: 0.94;
+        letter-spacing: 1.28px;
+        font-family: $secondaryFont;
+        color: black;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
+
+    section:nth-child(2) {
+      background-color: $red;
+      border: 0;
+      color: white;
+      
+      div {
+        background-color: #ffffff82;
+
+        div {
+          background-color: white;
+        }
+      }
+
+      h2 {
+        color: white;
+      }
+
+    }
+  }
+
+  .guarantee-container {
+    @include gridcenter();
+    grid-auto-columns: repeat(3, calc(30% - 50px));
+    text-align: center;
+    padding: 170px 0;
+    gap: 60px;
+
+    @media (max-width: 980px) {
+      grid-auto-flow: dense;
+      padding: 50px 0;
+    }
+
+    section {
+      @include flexbox();
+      gap: 8px;
+
+      div {
+        width: 80px;
+        height: 80px;
+        border-radius: 50px;
+        background-color: lightgray;
+        @include flexcenter();
+        justify-content: center;
+
+        div {
+         background-color: black;
+         border-radius: 50px;
+         width: 60px;
+         height: 60px;
+        }
+      }
+
+      h2 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        line-height: 1.4;
+        padding-top: 1em;
+      }
+
+      p {
+        font-size: 14px;
+        line-height: 1.5;
+      }
+    }
+  }  
+}

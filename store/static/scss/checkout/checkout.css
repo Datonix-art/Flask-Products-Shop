@@ -1,0 +1,133 @@
+.checkout {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.checkout {
+  padding: 120px 60px;
+  min-height: 150vh;
+  display: flex;
+  justify-content: space-between;
+}
+.checkout .billing_form {
+  width: 50%;
+  height: 100%;
+}
+.checkout .billing_form h1 {
+  font-family: "Inter";
+  padding-bottom: 40px;
+  color: black;
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 1.5;
+}
+.checkout .billing_form form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 32px;
+  width: 100%;
+}
+.checkout .billing_form form div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  width: 100%;
+}
+.checkout .billing_form form div label {
+  font-family: "Poppins";
+  color: black;
+  opacity: 0.4;
+  font-size: 1rem;
+}
+.checkout .billing_form form div input {
+  width: 80%;
+  height: 50px;
+  border: 0;
+  border-radius: 4px;
+  background: #f5f5f5;
+}
+.checkout .billing_form form span {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+}
+.checkout .billing_form form span input {
+  accent-color: #db4444;
+  width: 20px;
+  height: 20px;
+}
+.checkout .billing_details {
+  padding-top: 4em;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.checkout .billing_details .cart_items {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2em;
+}
+.checkout .billing_details .cart_items .item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 70%;
+  gap: 22px;
+}
+.checkout .billing_details .cart_items .item a {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.checkout .billing_details .checkout_total {
+  width: 470px;
+  height: 324px;
+}
+.checkout .billing_details .checkout_total .container {
+  padding: 32px 24px;
+  font-family: "Poppins";
+}
+.checkout .billing_details .checkout_total .container .info {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-bottom: 15px;
+}
+.checkout .billing_details .checkout_total .container .info p {
+  line-height: 1.5;
+  font-size: 1rem;
+  color: black;
+}
+.checkout .billing_details .checkout_total .container .line {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: black;
+  opacity: 0.4;
+  margin-bottom: 1em;
+}/*# sourceMappingURL=checkout.css.map */

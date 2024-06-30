@@ -1,0 +1,54 @@
+{% extends './base.html' %}
+{% block content %}
+  <section class="contacts-page">
+    <h1 class="contacts-title"><span>{{ _('Home / ') }}</span>{{ _('Contact') }}</h1>
+    <div class="contacts-wrapper">
+
+      <address class="contacts-info">
+        <div class="info-container">
+          <div class="info">
+            <div>
+              <div>
+                <img src="{{ url_for('static', filename='images/Vector.png')}}">
+              </div>
+              <h5>{{ _('Call To Us') }}</h5>
+            </div>
+            <p>{{ _('We are available 24/7, 7 days a week.') }}</p>
+            <p>{{ _('Phone: +8801611112222') }}</p>
+          </div>
+
+          <div class="middleline"></div>
+
+          <div class="form">
+            <div>
+              <div>
+                <img src="{{ url_for('static', filename='images/Vector2.png')}}">
+              </div>
+              <h5>{{ _('Write To Us') }}</h5>
+            </div>
+            <p>{{ _('Fill out our form and we will contact you within 24 hours.') }}</p>
+            <p>{{ _('Emails: customer@exclusive.com') }}</p>
+            <p>{{ _('Emails: support@exclusive.com') }}</p>
+          </div>
+        </div>
+      </address>
+
+      <form class="contacts-form" method="post">
+        {{ form.hidden_tag() }}
+        <div class="form-container">
+        <div>
+          {{ form.name() }}
+          {{ form.email() }}
+          {{ form.phoneNumber() }}
+        </div>
+        <div>
+          {{ form.message() }}
+        </div>
+        <div>
+           {{ form.submit() }}
+        </div>
+        </div>
+      </form>
+    </div>
+  </section>
+{% endblock %}

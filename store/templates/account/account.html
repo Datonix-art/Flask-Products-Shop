@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="account">
+  <div class="flash_message">
+    {% for category, message in get_flashed_messages(with_categories=true) %}
+      <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    {% endfor %}
+  </div>
+  
+  <div class="user__meeting">
+    <h1 class="account-title"><span>{{ _('Home / ') }}</span>{{ _('Account') }}</h1>
+    <h1 class="account-user">{{ _('Welcome!') }} <span>{{ current_user.firstName|title }}</span></h1>
+  </div>
+
+  <div class="user__settings">
+    <div class="settings-options">
+      <section class="Account">
+        <h2>{{ _('Manage My Account') }}</h2>
+        <a href="/account/profile">
+          <button>{{ _('My Profile') }}</button>
+        </a>
+        <a href="/account/payments">
+          <button>{{ _('My Payment Options') }}</button>
+        </a>
+        <a>
+          <button>{{ _('Address Book') }}</button>
+        </a>
+      </section>
+      <section class="Orders">
+        <h2>{{ _('My Orders') }}</h2>
+        <a>
+          <button>{{ _('My Returns') }}</button>
+        </a>
+        <a>
+          <button>{{ _('My Cancellations') }}</button>
+        </a>
+      </section>
+    </div>
+    <div class="settings">
+      {% if request.path == '/account/profile' %}
+        <div class="Profile">
+          <h1>{{ _('Edit Your Profile') }}</h1>
+          <form enctype="multipart/form-data" method="post">
+            {{ form.hidden_tag() }}
+            <div class="input-container">
+              <div class="firstName">
+                {{ form.firstName.label() }}
+                {{ form.firstName() }}
+              </div>
+              <div class="lastName">
+                {{ form.lastName.label() }}
+                {{ form.lastName() }}
+              </div>
+              <div class="email">
+                {{ form.email.label() }}
+                {{ form.email() }}
+              </div>
+              <div class="address">
+                {{ form.address.label() }}
+                {{ form.address() }}
+              </div>
+              <div class="password">
+                {{ form.password.label() }}
+                {{ form.password() }}
+                {{ form.newPassword() }}
+                {{ form.confirmNewPassword() }}
+              </div>
+              <div class="save">
+                {{ form.save() }}
+              </div>
+            </div>
+          </form>
+        </div>
+      {% elif request.path == '/account/payments' %}
+        <div class="payments">
+          <h1>{{ _('Payments') }}</h1>
+        </div>
+      {% endif%}
+    </div>
+  </div>
+</section>
+{% endblock %}
