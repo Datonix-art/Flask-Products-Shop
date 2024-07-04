@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, jsonify, redirect, url_for, session, request, flash
+from flask import Blueprint, render_template, redirect, url_for, request, flash
 from flask_login import current_user, login_required
 from store.cart.models import CartModel, db
 from store.cart.forms import CartForm
@@ -81,8 +81,8 @@ def update_cart():
       item.save()
       product = ProductModel.query.get(item.product_id)
       total_price += item.amount * product.price
-      flash('Cart updated successfully!', 'success')
-      return redirect(url_for('cart.shopping_cart'))
+    flash('Cart updated successfully!', 'success')
+    return redirect(url_for('cart.shopping_cart'))
   
   flash('Error updating cart!', 'danger')
   return redirect(url_for('cart.shopping_cart'))

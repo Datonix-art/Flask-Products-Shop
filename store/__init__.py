@@ -5,6 +5,10 @@ from flask import Flask, redirect, render_template, request, session, url_for
 app = Flask(__name__, template_folder='templates')
 app.app_context().push()
 
+from flask_cors import CORS
+
+CORS(app)
+
 from flask_babel import Babel, _, lazy_gettext
 
 from flask_login import LoginManager
