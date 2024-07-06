@@ -23,6 +23,7 @@ class ProductModel(db.Model, BaseModel):
     image = db.Column(db.String(128), nullable=True, unique=True)
     price = db.Column(db.Integer, nullable=False, default=1000)
     amount = db.Column(db.Integer, nullable=False, default=1)
+    carts = db.relationship('CartModel', back_populates='product')
 
     def __repr__(self):
         return f'id: {self.id} - Name: {self.name} - Rs. {self.price}'

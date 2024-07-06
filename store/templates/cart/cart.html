@@ -32,27 +32,27 @@
                </tr>
              </thead>
              <tbody class="cart__items">
-               {% for item in cart %}
-                <tr class="__item--container">
-                  <th>
-                    <a href="/cart/{{ item.id }}/remove_from_cart" class="delete">
-                      x
-                    </a>
-                    <a href="/product_details/{{ item.id }}" class="product">
-                      <img src="{{ url_for('static', filename='images/product_images/' + item.image )}}" alt="item image" width="70" height="70">{{ item.name |  truncate(15)}}
-                    </a>
-                  </th>
-                  <th>${{ item.price }}</th>
-                  <th class="amount">
-                    {% for form_item in form.items %}
-                      {{ form_item.hidden_tag() }}
-                      {{ form_item.new_amount(value=item.amount, min=1, max=100) }}
-                      {{ form_item.item_id(value=item.id) }}
-                    {% endfor %}
-                  </th>
-                  <th>${{ item.price * item.amount }}</th>
-                </tr>
-                {% endfor %}
+                {% for item in cart %}
+                  <tr class="__item--container">
+                    <th>
+                      <a href="/cart/{{ item.id }}/remove_from_cart" class="delete">
+                        x
+                      </a>
+                      <a href="/product_details/{{ item.id }}" class="product">
+                        <img src="{{ url_for('static', filename='images/product_images/' + item.image )}}" alt="item image" width="70" height="70">{{ item.name |  truncate(15)}}
+                      </a>
+                    </th>
+                    <th>${{ item.price }}</th>
+                    <th class="amount">
+                      {% for form_item in form.items %}
+                        {{ form_item.csrf_token() }}
+                        {{ form_item.new_amount(value=item.amount, min=1, max=100) }}
+                        {{ form_item.item_id(value=item.id) }}
+                      {% endfor %}
+                    </th>
+                    <th>${{ item.price * item.amount }}</th>
+                  </tr>
+                  {% endfor %}
               </tbody>
               <tfoot>
                 {{ form.update_cart() }}

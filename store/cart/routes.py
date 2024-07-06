@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, redirect, url_for, request, flash
+from flask import Blueprint, render_template, redirect, url_for, flash
 from flask_login import current_user, login_required
 from store.cart.models import CartModel, db
 from store.cart.forms import CartForm, CartItemForm
@@ -20,6 +20,7 @@ def shopping_cart():
   products = []
   total_price = 0
   form = CartForm()
+
   for item in cart_items:
     product = ProductModel.query.get(item.product_id)
     product.amount = item.amount
@@ -79,8 +80,18 @@ def update_cart():
     for item_form in form.items:
       item_id = item_form.item_id.data
       new_amount = item_form.new_amount.data
+       
+      print(f"item_id: {item_id}, new_amount: {new_amount}")
 
-      cart_item = CartModel.query.get(item_id)
+      cart_item = None
+      
+      for item in cart_items:
+        if item.id == item_id:
+          cart_item = item
+        else:
+          flash('error', 'danger')
+
+
       if cart_item:
         cart_item.amount = new_amount
         cart_item.save()
