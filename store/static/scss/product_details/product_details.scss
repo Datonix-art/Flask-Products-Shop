@@ -70,6 +70,13 @@
 
           ul {
             display: flex;
+          
+            li:nth-child(1) input {
+              accent-color: tomato;
+            }
+            li:nth-child(2) input {
+              accent-color: lightblue;
+            }
           }
         }  
         

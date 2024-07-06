@@ -83,6 +83,12 @@
 .product .product_info form .form-container .product_color ul {
   display: flex;
 }
+.product .product_info form .form-container .product_color ul li:nth-child(1) input {
+  accent-color: tomato;
+}
+.product .product_info form .form-container .product_color ul li:nth-child(2) input {
+  accent-color: lightblue;
+}
 .product .product_info form .form-container .buy_now {
   display: flex;
   flex-direction: row;

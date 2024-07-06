@@ -14,10 +14,10 @@
       <form method="post" enctype="multipart/form-data">
         {{ form.hidden_tag() }}
         <div class="form-container">
-          <div class="product_color">
+          <!-- <div class="product_color">
             {{ form.product_color.label() }}
             {{ form.product_color() }}
-          </div>
+          </div> -->
           <div class="buy_now">
             <div class="amount">
               {{ form.product_amount(min=1, max=100) }}
@@ -26,7 +26,7 @@
                {{ form.Buy()}}
             </a>
             <div class="favorite">
-               
+              
             </div>
           </div>
         </div>
