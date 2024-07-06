@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, redirect, url_for, request, flash
 from flask_login import current_user, login_required
 from store.cart.models import CartModel, db
-from store.cart.forms import CartForm
+from store.cart.forms import CartForm, CartItemForm
 from store.shop.models import ProductModel
 
 cart = Blueprint('cart', __name__, template_folder='templates')
@@ -76,13 +76,24 @@ def update_cart():
 
   if form.validate_on_submit():
     total_price = 0
-    for item in cart_items:
-      product = ProductModel.query.get(item.product_id)
-      item.amount = form.new_amount.data
-      item.save()
-      total_price += item.amount * product.price 
+    for item_form in form.items:
+      item_id = item_form.item_id.data
+      new_amount = item_form.new_amount.data
+
+      cart_item = CartModel.query.get(item_id)
+      if cart_item:
+        cart_item.amount = new_amount
+        cart_item.save()
+
+        product = ProductModel.query.get(cart_item.product_id)
+        total_price += cart_item.amount * product.price 
+      else:
+        flash(f'cart item {item_id} not found!', 'danger')
     flash('Cart updated successfully!', 'success')
-    return redirect(url_for('cart.shopping_cart'))
   else:
     flash('Error updating cart!', 'danger')
-    return redirect(url_for('cart.shopping_cart'))
+    for errors in form.errors.items():
+      for error in errors:
+        flash(f'Error in field {error}', 'danger')
+  
+  return redirect(url_for('cart.shopping_cart'))

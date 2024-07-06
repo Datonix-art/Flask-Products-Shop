@@ -1,7 +1,12 @@
 from flask_wtf import FlaskForm
 from wtforms.validators import InputRequired, NumberRange
-from wtforms import IntegerField, SubmitField
+from wtforms import FieldList, FormField, IntegerField, SubmitField, HiddenField
+
+class CartItemForm(FlaskForm):
+    new_amount = IntegerField('Amount', validators=[InputRequired(), NumberRange(min=1, max=100)])
+    item_id = HiddenField('Item ID')  
+
 
 class CartForm(FlaskForm):
-    new_amount = IntegerField('Amount', validators=[InputRequired(), NumberRange(min=1, max=100)])
+    items = FieldList(FormField(CartItemForm), min_entries=1)
     update_cart = SubmitField('Update Cart')

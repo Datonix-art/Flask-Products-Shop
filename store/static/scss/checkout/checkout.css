@@ -101,6 +101,9 @@
   align-items: center;
   flex-wrap: wrap;
 }
+.checkout .billing_details .cart_items .item a img {
+  margin-right: 1em;
+}
 .checkout .billing_details .checkout_total {
   width: 470px;
   height: 324px;

@@ -81,7 +81,10 @@
         
         a {
           @include flexbox(row, center, center, wrap);
-
+          
+          img {
+            margin-right: 1em;
+          }
         }
       }
     }
