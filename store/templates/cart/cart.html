@@ -35,7 +35,10 @@
                {% for item in cart %}
                 <tr class="__item--container">
                   <th>
-                    <a href="/product_details/{{ item.product_id }}" class="product">
+                    <a href="/cart/{{ item.id }}/remove_from_cart" class="delete">
+                      x
+                    </a>
+                    <a href="/product_details/{{ item.id }}" class="product">
                       <img src="{{ url_for('static', filename='images/product_images/' + item.image )}}" alt="item image" width="70" height="70">{{ item.name |  truncate(15)}}
                     </a>
                   </th>

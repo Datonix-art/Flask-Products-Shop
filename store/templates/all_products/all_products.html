@@ -29,7 +29,7 @@
             </div>
             <h2>{{ product.name }}</h2>
             <span>${{ product.price }}</span>
-            <a href="#" class="cartbtn">{{ _('Add To Cart') }}</a>
+            <a href="/{{ product.id }}/add_to_cart" class="cartbtn">{{ _('Add To Cart') }}</a>
           </section>
         {% endfor %}
       </div>

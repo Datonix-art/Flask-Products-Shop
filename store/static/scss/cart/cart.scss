@@ -44,7 +44,17 @@
 
       th:nth-child(1) {
         width: 40px;
+        padding: 10px;
         white-space: nowrap;
+ 
+        .delete {
+          display: none;
+          color: $red;
+          font-family: $secondaryFont;
+          font-weight: 500;
+          cursor: pointer;
+          font-size: 1.1rem
+        } 
 
         .product {
           @include flexcenter(row);
@@ -62,6 +72,13 @@
             }
           }
         }
+      }
+
+      th:nth-child(1):hover .delete {
+        display: block !important;
+        position: absolute;
+        font-size: 1.8rem;
+        translate: -20px 16px;
       }
 
       .amount {
