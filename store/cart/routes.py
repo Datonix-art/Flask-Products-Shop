@@ -77,10 +77,11 @@ def update_cart():
   if form.validate_on_submit():
     total_price = 0
     for item in cart_items:
-      item.amount = form.new_amount.data
-      item.save()
-      product = ProductModel.query.get(item.product_id)
-      total_price += item.amount * product.price
+      product = ProductModel.query.get(item.id)
+      if product:
+        item.amount = form.new_amount.data
+        item.save()
+        total_price += item.amount * product.price 
     flash('Cart updated successfully!', 'success')
     return redirect(url_for('cart.shopping_cart'))
   else:

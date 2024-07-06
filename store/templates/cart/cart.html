@@ -49,9 +49,10 @@
                   <th>${{ item.price * item.amount }}</th>
                 </tr>
                 {% endfor %}
+              </tbody>
+              <tfoot>
                 {{ form.update_cart() }}
-             </tbody>
-            
+             </tfoot>
             </form>
           </table>
 
