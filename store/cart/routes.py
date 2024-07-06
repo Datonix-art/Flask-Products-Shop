@@ -67,7 +67,7 @@ def cleart_cart():
   return redirect(url_for('cart.shopping_cart'))
 
 
-@cart.route('/cart/update_cart', methods=['POST'])
+@cart.route('/cart/update_cart', methods=['GET', 'POST'])
 @login_required
 def update_cart():
   user_id = current_user.id
@@ -83,6 +83,6 @@ def update_cart():
       total_price += item.amount * product.price
     flash('Cart updated successfully!', 'success')
     return redirect(url_for('cart.shopping_cart'))
-  
-  flash('Error updating cart!', 'danger')
-  return redirect(url_for('cart.shopping_cart'))
+  else:
+    flash('Error updating cart!', 'danger')
+    return redirect(url_for('cart.shopping_cart'))

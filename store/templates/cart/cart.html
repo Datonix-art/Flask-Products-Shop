@@ -21,7 +21,7 @@
       <section class="cart__item--container">
         
           <table class="cart__item--table">
-            <form method="post" action="{{ url_for('cart.update_cart') }}" id="cartForm">
+            <form method="post" action="{{ url_for('cart.update_cart') }}" id="cartForm" enctype="multipart/form-data">
              {{ form.hidden_tag() }}
              <thead class="cart__item--title">
                <tr class="__item--container">
