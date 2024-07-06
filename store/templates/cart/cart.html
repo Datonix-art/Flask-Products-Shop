@@ -45,7 +45,8 @@
                   </th>
                   <th>${{ item.price * item.amount }}</th>
                 </tr>
-               {% endfor %}
+                {% endfor %}
+                {{ form.update_cart() }}
              </tbody>
             
             </form>
@@ -58,9 +59,9 @@
                   Return To Shop
                 </a>
 
-                <a href="/cart/update_cart">
+                <!-- <a href="/cart/update_cart">
                   <button type="submit" form="cartForm">Update Cart</button>
-                </a>
+                </a> -->
             
             </div>
             
@@ -95,9 +96,8 @@
             </div>
           
           </section>
-      
-      </section>
-    
+        </section>
+
     {% else %}
 
      <section>
