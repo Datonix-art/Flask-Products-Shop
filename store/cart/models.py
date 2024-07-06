@@ -10,7 +10,3 @@ class CartModel(db.Model, BaseModel):
   def __repr__(self):
     return f'user id: {self.user_id}; product id: {self.product_id}'
   
-  def update_amount(self, amount):
-    self.amount += amount
-    
-  

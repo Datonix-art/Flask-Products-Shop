@@ -62,7 +62,7 @@ def cleart_cart():
   cart_items = CartModel.query.filter_by(user_id=user_id).all()
 
   for cart_item in cart_items:
-    cart_item.remove()
+    cart_item.delete()
 
   return redirect(url_for('cart.shopping_cart'))
 
