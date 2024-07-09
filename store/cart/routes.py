@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, redirect, url_for, flash
+from flask import Blueprint, render_template, redirect, request, url_for, flash
 from flask_login import current_user, login_required
 from store.cart.models import CartModel, db
 from store.cart.forms import CartForm, CartItemForm
@@ -68,42 +68,41 @@ def cleart_cart():
   return redirect(url_for('cart.shopping_cart'))
 
 
-@cart.route('/cart/update_cart', methods=['GET', 'POST'])
+@cart.route('/cart/update_cart', methods=['GET','POST'])
 @login_required
 def update_cart():
-  user_id = current_user.id
-  cart_items = CartModel.query.filter_by(user_id=user_id).all()
-  form = CartForm()
+    user_id = current_user.id
+    cart_items = CartModel.query.filter_by(user_id=user_id).all()
+    form = CartForm(request.form)
 
-  if form.validate_on_submit():
-    total_price = 0
-    for item_form in form.items:
-      item_id = item_form.item_id.data
-      new_amount = item_form.new_amount.data
-       
-      print(f"item_id: {item_id}, new_amount: {new_amount}")
+    if form.validate_on_submit():
+        total_price = 0
+        for item_form in form.items:
+            item_id = int(item_form.item_id.data)
+            new_amount = item_form.new_amount.data
 
-      cart_item = None
-      
-      for item in cart_items:
-        if item.id == item_id:
-          cart_item = item
-          break
+            print(f"item_id: {item_id}, new_amount: {new_amount}")
 
+            cart_item = None
 
-      if cart_item:
-        cart_item.amount = new_amount
-        cart_item.save()
+            for item in cart_items:
+                if item.product_id == item_id:
+                    cart_item = item
+                    break
 
-        product = ProductModel.query.get(cart_item.product_id)
-        total_price += cart_item.amount * product.price 
-      else:
-        flash(f'cart item {item_id} not found!', 'danger')
-    flash('Cart updated successfully!', 'success')
-  else:
-    flash('Error updating cart!', 'danger')
-    for errors in form.errors.items():
-      for error in errors:
-        flash(f'Error in field {error}', 'danger')
+            if cart_item:
+                cart_item.amount = new_amount
+                cart_item.save()
+
+                product = ProductModel.query.get(cart_item.product_id)
+                total_price += cart_item.amount * product.price 
+            else:
+                flash(f'Cart item {item_id} not found!', 'danger')
+        flash('Cart updated successfully!', 'success')
+    else:
+        flash('Error updating cart!', 'danger')
+        for field, errors in form.errors.items():
+            for error in errors:
+                flash(f'Error in field {field}: {error}', 'danger')
   
-  return redirect(url_for('cart.shopping_cart'))
+    return redirect(url_for('cart.shopping_cart'))
