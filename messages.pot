@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-06-28 16:56+0400\n"
+"POT-Creation-Date: 2024-07-09 14:32+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -93,7 +93,7 @@ msgstr ""
 msgid "Login / Register"
 msgstr ""
 
-#: store/templates/base_footer.html:26
+#: store/templates/base_footer.html:26 store/templates/cart/cart.html:18
 msgid "Cart"
 msgstr ""
 
@@ -142,7 +142,7 @@ msgstr ""
 msgid "ShopNow"
 msgstr ""
 
-#: store/templates/base_header.html:28
+#: store/templates/base_header.html:28 store/templates/cart/cart.html:18
 msgid "Home"
 msgstr ""
 
@@ -166,15 +166,7 @@ msgstr ""
 msgid "My Order"
 msgstr ""
 
-#: store/templates/account/account.html:38 store/templates/base_header.html:82
-msgid "My Cancellations"
-msgstr ""
-
-#: store/templates/base_header.html:86
-msgid "My Reviews"
-msgstr ""
-
-#: store/templates/base_header.html:90
+#: store/templates/base_header.html:82
 msgid "Log out"
 msgstr ""
 
@@ -327,6 +319,10 @@ msgstr ""
 msgid "My Returns"
 msgstr ""
 
+#: store/templates/account/account.html:38
+msgid "My Cancellations"
+msgstr ""
+
 #: store/templates/account/account.html:45
 msgid "Edit Your Profile"
 msgstr ""
@@ -343,6 +339,71 @@ msgstr ""
 #: store/templates/category_product/category_product.html:22
 #: store/templates/home/home.html:91
 msgid "Add To Cart"
+msgstr ""
+
+#: store/templates/cart/cart.html:28
+msgid "Product"
+msgstr ""
+
+#: store/templates/cart/cart.html:29
+msgid "Price"
+msgstr ""
+
+#: store/templates/cart/cart.html:30
+msgid "Quantity"
+msgstr ""
+
+#: store/templates/cart/cart.html:31 store/templates/cart/cart.html:83
+#: store/templates/checkout/checkout.html:58
+msgid "SubTotal"
+msgstr ""
+
+#: store/templates/cart/cart.html:63
+msgid "Return To Shop"
+msgstr ""
+
+#: store/templates/cart/cart.html:67
+msgid "Clear Cart"
+msgstr ""
+
+#: store/templates/cart/cart.html:75
+msgid "Coupon Code"
+msgstr ""
+
+#: store/templates/cart/cart.html:76 store/templates/checkout/checkout.html:74
+msgid "Apply Coupon"
+msgstr ""
+
+#: store/templates/cart/cart.html:81
+msgid "Cart Total"
+msgstr ""
+
+#: store/templates/cart/cart.html:88 store/templates/checkout/checkout.html:63
+msgid "Shipping"
+msgstr ""
+
+#: store/templates/cart/cart.html:89 store/templates/checkout/checkout.html:64
+msgid "Free"
+msgstr ""
+
+#: store/templates/cart/cart.html:93 store/templates/checkout/checkout.html:68
+msgid "Total"
+msgstr ""
+
+#: store/templates/cart/cart.html:97
+msgid "Proceed to checkout"
+msgstr ""
+
+#: store/templates/cart/cart.html:109
+msgid "No items in cart"
+msgstr ""
+
+#: store/templates/checkout/checkout.html:6
+msgid "Billing Details"
+msgstr ""
+
+#: store/templates/checkout/checkout.html:39
+msgid "Save this information for faster check-out next time"
 msgstr ""
 
 #: store/templates/contacts/contacts.html:14

@@ -15,7 +15,7 @@
       </section>
 
       <section class="cart__title">
-        <p>Home / <span>Cart</span></p>
+        <p>{{ _('Home') }} / <span>{{ _('Cart') }}</span></p>
       </section>
 
       <section class="cart__item--container">
@@ -25,10 +25,10 @@
              {{ form.hidden_tag() }}
              <thead class="cart__item--title">
                <tr class="__item--container">
-                <td>Product</td>
-                <td>Price</td>
-                <td>Quantity</td>
-                <td>SubTotal</td>
+                <td>{{ _('Product') }}</td>
+                <td>{{ _('Price') }}</td>
+                <td>{{ _('Quantity') }}</td>
+                <td>{{ _('SubTotal') }}</td>
                </tr>
              </thead>
              <tbody class="cart__items">
@@ -60,11 +60,11 @@
           <section class="cart__footer">
             <div class="cart__redirects">
               <a href="/home">
-                Return To Shop
+                {{ _('Return To Shop') }}
               </a>
               
               <a href="/cart/clear_cart">
-                <button type="submit">Clear Cart</button>
+                <button type="submit">{{ _('Clear Cart') }}</button>
               </a>
               
               {{ form.update_cart(form='cartForm') }}
@@ -72,29 +72,29 @@
             
             <div class="cart__checkout_redirect">
               <section class="coupon">
-                <input type="text" placeholder="Coupon Code" min="6" max="6">
-                <button type="submit">Apply Coupon</button>
+                <input type="text" placeholder="{{ _('Coupon Code') }}" min="6" max="6">
+                <button type="submit">{{ _('Apply Coupon') }}</button>
               </section>
 
               <section class="Cart_Total">
                 <div class="container">
-                  <h2>Cart Total</h2>
+                  <h2>{{ _('Cart Total') }}</h2>
                   <div class="info">
-                   <p>SubTotal</p>
+                   <p>{{ _('SubTotal') }}</p>
                    <p>${{ total_price }}</p>
                   </div>
                   <span class="line"></span>
                   <div class="info">
-                    <p>Shipping</p>
-                    <p>Free</p>
+                    <p>{{ _('Shipping') }}</p>
+                    <p>{{ _('Free') }}</p>
                   </div>
                   <span class="line"></span>
                   <div class="info">
-                    <p>Total:</p>
+                    <p>{{ _('Total') }}:</p>
                     <p>${{ total_price }}</p>
                   </div>
                   <div class="primaryBTN--container">
-                    <a href="/checkout" class="primaryBTN-btn">Procees to checkout</a>
+                    <a href="/checkout" class="primaryBTN-btn">{{ _('Proceed to checkout') }}</a>
                   </div>
                 </div>
               </section>
@@ -106,7 +106,7 @@
     {% else %}
 
      <section>
-       <h1>No items in cart.</h1>
+       <h1>{{ _('No items in cart') }}.</h1>
       </section>
     
     {% endif %}

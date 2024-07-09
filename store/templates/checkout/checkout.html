@@ -3,7 +3,7 @@
 {% block content %}
   <section class="checkout">
      <div class="billing_form">
-       <h1>Billing Details</h1>
+       <h1>{{ _('Billing Details') }}</h1>
        <form action="{{ url_for('shop.checkout') }}" method="post" id="checkoutForm">
          {{ form.hidden_tag() }}
          <div>
@@ -36,7 +36,7 @@
         </div>     
         <span>
           <input type="checkbox" id="checkbox" class="checkbox">
-          <label for="checkbox">Save this information for faster check-out next time</label>
+          <label for="checkbox">{{ _('Save this information for faster check-out next time') }}</label>
         </span>
       </form>
      </div>
@@ -55,23 +55,23 @@
        <section class="checkout_total">
         <div class="container">
           <div class="info">
-           <p>SubTotal</p>
+           <p>{{ _('SubTotal') }}</p>
            <p>${{ total_price }}</p>
           </div>
           <span class="line"></span>
           <div class="info">
-            <p>Shipping</p>
-            <p>Free</p>
+            <p>{{ _('Shipping') }}</p>
+            <p>{{ _('Free') }}</p>
           </div>
           <span class="line"></span>
           <div class="info">
-            <p>Total:</p>
+            <p>{{ _('Total') }}:</p>
             <p>${{ total_price }}</p>
           </div>
           <div class="submitting_section">
             <section class="coupon">
               <input type="text" placeholder="Coupon Code" min="6" max="6">
-              <button type="submit" class="checkout-btn">Apply Coupon</button>
+              <button type="submit" class="checkout-btn">{{ _('Apply Coupon') }}</button>
             </section>
             {{ form.place_order(form='checkoutForm', class='checkout-btn') }}
           </div>

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-06-27 19:36+0400\n"
+"POT-Creation-Date: 2024-07-09 14:21+0400\n"
 "PO-Revision-Date: 2024-06-27 13:18+0400\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ka\n"
@@ -74,7 +74,7 @@ msgstr "exclusive@gmail.com"
 msgid "+88015-88888-9999"
 msgstr "+88015-88888-9999"
 
-#: store/templates/account/account.html:13 store/templates/base_footer.html:23
+#: store/templates/account/account.html:14 store/templates/base_footer.html:23
 msgid "Account"
 msgstr "ანგარიში"
 
@@ -86,7 +86,7 @@ msgstr "ჩემი ანგარიში"
 msgid "Login / Register"
 msgstr "შესვლა / რეგისტრაცია"
 
-#: store/templates/base_footer.html:26
+#: store/templates/base_footer.html:26 store/templates/cart/cart.html:18
 msgid "Cart"
 msgstr "კალათა"
 
@@ -137,7 +137,7 @@ msgstr ""
 msgid "ShopNow"
 msgstr "შეიძინეთ ახლა"
 
-#: store/templates/base_header.html:28
+#: store/templates/base_header.html:28 store/templates/cart/cart.html:18
 msgid "Home"
 msgstr "მთავარი"
 
@@ -153,7 +153,7 @@ msgstr "დარეგისტრირება"
 msgid "What are you looking for?"
 msgstr "რას ეძებთ?"
 
-#: store/templates/account/account.html:19 store/templates/base_header.html:74
+#: store/templates/account/account.html:21 store/templates/base_header.html:74
 msgid "Manage My Account"
 msgstr "ჩემი ანგარიშის მართვა"
 
@@ -161,15 +161,7 @@ msgstr "ჩემი ანგარიშის მართვა"
 msgid "My Order"
 msgstr "ჩემი შეკვეთა"
 
-#: store/templates/account/account.html:36 store/templates/base_header.html:82
-msgid "My Cancellations"
-msgstr "ჩემი გაუქმებები"
-
-#: store/templates/base_header.html:86
-msgid "My Reviews"
-msgstr "ჩემი მიმოხილვები"
-
-#: store/templates/base_header.html:90
+#: store/templates/base_header.html:82
 msgid "Log out"
 msgstr "გამოსვლა"
 
@@ -195,7 +187,7 @@ msgstr ""
 msgid "Back to home page"
 msgstr "დაბრუნება მთავარ გვერდზე"
 
-#: store/templates/about/about.html:4 store/templates/account/account.html:13
+#: store/templates/about/about.html:4 store/templates/account/account.html:14
 #: store/templates/contacts/contacts.html:4
 msgid "Home / "
 msgstr "მთავარი / "
@@ -256,6 +248,10 @@ msgstr "აქტიური მომხმარებელი ჩვენ�
 msgid "25k"
 msgstr "25 ათასი"
 
+#: store/templates/about/about.html:55
+msgid "Anual gross sale in our site"
+msgstr "ყოველწლიური მთლიანი გაყიდვა ჩვენს საიტზე"
+
 #: store/templates/about/about.html:65
 msgid "Tom Cruise"
 msgstr "ტომ კრუზი"
@@ -280,59 +276,63 @@ msgstr "ვილ სმიტი"
 msgid "Product Designer"
 msgstr "პროდუქტის დიზაინერი"
 
-#: store/templates/about/about.html:106 store/templates/home/home.html:131
+#: store/templates/about/about.html:106 store/templates/home/home.html:141
 msgid "FREE AND FAST DELIVERY"
 msgstr "უფასო და სწრაფი მიწოდება"
 
-#: store/templates/about/about.html:107 store/templates/home/home.html:132
+#: store/templates/about/about.html:107 store/templates/home/home.html:142
 msgid "Free delivery for all orders over $140"
 msgstr "უფასო მიწოდება ყველა შეკვეთაზე, რომელიც $140-ზე მეტია"
 
-#: store/templates/about/about.html:117 store/templates/home/home.html:142
+#: store/templates/about/about.html:117 store/templates/home/home.html:152
 msgid "24/7 CUSTOMER SERVICE"
 msgstr "24/7 მომსახურება მომხმარებლებს"
 
-#: store/templates/about/about.html:118 store/templates/home/home.html:143
+#: store/templates/about/about.html:118 store/templates/home/home.html:153
 msgid "Friendly 24/7 customer support"
 msgstr "მეგობრული 24/7 მომსახურება მომხმარებლებს"
 
-#: store/templates/about/about.html:128 store/templates/home/home.html:153
+#: store/templates/about/about.html:128 store/templates/home/home.html:163
 msgid "MONEY BACK GUARANTEE"
 msgstr "ფულის დაბრუნების გარანტია"
 
-#: store/templates/about/about.html:129 store/templates/home/home.html:154
+#: store/templates/about/about.html:129 store/templates/home/home.html:164
 msgid "We return money within 30 days"
 msgstr "ჩვენ ვაბრუნებთ ფულს 30 დღეში"
 
-#: store/templates/account/account.html:14
+#: store/templates/account/account.html:15
 msgid "Welcome!"
 msgstr "მოგესალმებით!"
 
-#: store/templates/account/account.html:21
+#: store/templates/account/account.html:23
 msgid "My Profile"
 msgstr "ჩემი პროფილი"
 
-#: store/templates/account/account.html:24
+#: store/templates/account/account.html:26
 msgid "My Payment Options"
 msgstr "ჩემი გადახდის ვარიანტები"
 
-#: store/templates/account/account.html:27
+#: store/templates/account/account.html:29
 msgid "Address Book"
 msgstr "მისამართების წიგნი"
 
-#: store/templates/account/account.html:31
+#: store/templates/account/account.html:33
 msgid "My Orders"
 msgstr "ჩემი შეკვეთები"
 
-#: store/templates/account/account.html:33
+#: store/templates/account/account.html:35
 msgid "My Returns"
 msgstr "ჩემი დაბრუნებები"
 
-#: store/templates/account/account.html:43
+#: store/templates/account/account.html:38
+msgid "My Cancellations"
+msgstr "ჩემი გაუქმებები"
+
+#: store/templates/account/account.html:45
 msgid "Edit Your Profile"
 msgstr "შეცვალეთ თქვენი პროფილი"
 
-#: store/templates/account/account.html:77
+#: store/templates/account/account.html:79
 msgid "Payments"
 msgstr "გადახდები"
 
@@ -342,9 +342,74 @@ msgstr "ყველა პროდუქტი"
 
 #: store/templates/all_products/all_products.html:32
 #: store/templates/category_product/category_product.html:22
-#: store/templates/home/home.html:81
+#: store/templates/home/home.html:91
 msgid "Add To Cart"
 msgstr "დაამატეთ კალათაში"
+
+#: store/templates/cart/cart.html:28
+msgid "Product"
+msgstr "პროდუქტი"
+
+#: store/templates/cart/cart.html:29
+msgid "Price"
+msgstr "ღირებულება"
+
+#: store/templates/cart/cart.html:30
+msgid "Quantity"
+msgstr "რაოდენობა"
+
+#: store/templates/cart/cart.html:31 
+#: store/templates/cart/cart.html:83
+#: store/
+msgid "SubTotal"
+msgstr "მთლიანი"
+
+#: store/templates/cart/cart.html:63
+msgid "Return To Shop"
+msgstr "მაღაზიაში დაბრუნება"
+
+#: store/templates/cart/cart.html:67
+msgid "Clear Cart"
+msgstr "კალათის გასუფთავება"
+
+#: store/templates/cart/cart.html:75
+msgid "Coupon Code"
+msgstr "კუპონის კოდი"
+
+msgid "Save this information for faster check-out next time"
+msgstr "შეინახეთ ეს ინფორმაცია უფრო სწრაფი გასვლისთვის შემდეგ ჯერზე"
+
+#: store/templates/cart/cart.html:76 store/templates/checkout/checkout.html:74
+msgid "Apply Coupon"
+msgstr "გამოიყენეთ კუპონი"
+
+#: store/templates/cart/cart.html:81
+msgid "Cart Total"
+msgstr "კალათასი მთლიანი რაოდენობა"
+
+#: store/templates/cart/cart.html:88 store/templates/checkout/checkout.html:63
+msgid "Shipping"
+msgstr "გადაზიდვა"
+
+#: store/templates/cart/cart.html:89 store/templates/checkout/checkout.html:64
+msgid "Free"
+msgstr "უფასო"
+
+#: store/templates/cart/cart.html:93 store/templates/checkout/checkout.html:68
+msgid "Total"
+msgstr "სულ"
+
+#: store/templates/cart/cart.html:97
+msgid "Proceed to checkout"
+msgstr "გადახდაში გადასვლა"
+
+#: store/templates/cart/cart.html:109
+msgid "No items in cart"
+msgstr "არ არის პროდუქტი კალათაში"
+
+#: store/templates/checkout/checkout.html:6
+msgid "Billing Details"
+msgstr "გადასახადის დეტალები"
 
 #: store/templates/contacts/contacts.html:14
 msgid "Call To Us"
@@ -374,59 +439,71 @@ msgstr "ელ-ფოსტა: customer@exclusive.com"
 msgid "Emails: support@exclusive.com"
 msgstr "ელ-ფოსტა: support@exclusive.com"
 
+#: store/templates/home/home.html:17
+msgid "iPhone 14 Series"
+msgstr "აიფონ 14 სერიები"
+
+#: store/templates/home/home.html:19
+msgid "Up to 10 percent off Voucher"
+msgstr "10 პროცენტამდე ფასდაკლების ვაუჩერი"
+
 #: store/templates/home/home.html:20
+msgid "Shop Now"
+msgstr "იშოპე ახლა"
+
+#: store/templates/home/home.html:30
 msgid "Today's"
 msgstr "დღეს"
 
-#: store/templates/home/home.html:23
+#: store/templates/home/home.html:33
 msgid "Fresh Sales"
 msgstr "ახალი გაყიდვები"
 
-#: store/templates/home/home.html:26
+#: store/templates/home/home.html:36
 msgid "Days"
 msgstr "დღე"
 
-#: store/templates/home/home.html:35
+#: store/templates/home/home.html:45
 msgid "Hours"
 msgstr "საათი"
 
-#: store/templates/home/home.html:44
+#: store/templates/home/home.html:54
 msgid "Minutes"
 msgstr "წუთი"
 
-#: store/templates/home/home.html:53
+#: store/templates/home/home.html:63
 msgid "Seconds"
 msgstr "წამი"
 
-#: store/templates/home/home.html:87
+#: store/templates/home/home.html:97
 msgid "View All Products"
 msgstr "ნახე ყველა პროდუქტი"
 
-#: store/templates/home/home.html:95
+#: store/templates/home/home.html:105
 msgid "Categories"
 msgstr "კატეგორიები"
 
-#: store/templates/home/home.html:97
+#: store/templates/home/home.html:107
 msgid "Browse By Category"
 msgstr "მოძიება კატეგორიის მიხედვით"
 
-#: store/templates/home/home.html:101
+#: store/templates/home/home.html:111
 msgid "Phones"
 msgstr "ტელეფონები"
 
-#: store/templates/home/home.html:105
+#: store/templates/home/home.html:115
 msgid "Computers"
 msgstr "კომპიუტერები"
 
-#: store/templates/home/home.html:109
+#: store/templates/home/home.html:119
 msgid "Camera"
 msgstr "კამერა"
 
-#: store/templates/home/home.html:113
+#: store/templates/home/home.html:123
 msgid "HeadPhones"
 msgstr "ყურსასმენები"
 
-#: store/templates/home/home.html:117
+#: store/templates/home/home.html:127
 msgid "SmartWatch"
 msgstr "მოწყობილობები"
 
@@ -457,103 +534,75 @@ msgstr "დავიწყებით პაროლი?"
 #~ msgid "name"
 #~ msgstr "სახელი"
 
-#: store/core/forms.py: 8
-msgid "Your name"
-msgstr "სახელი"
-
 #~ msgid "email"
 #~ msgstr "ელ-ფოსტა"
-
-#: store/core/forms.py: 9
-msgid "Your email"
-msgstr "ელ-ფოსტა"
 
 #~ msgid "phone"
 #~ msgstr "ტელეფონი"
 
-#: store/core/forms.py: 10
-msgid "Your phone"
-msgstr "ტელეფონი"
+#~ msgid "My Reviews"
+#~ msgstr "ჩემი მიმოხილვები"
 
-msgid "message"
-msgstr "მესიჯი"
+#~ msgid "Your name"
+#~ msgstr "სახელი"
 
-#: store/core/forms.py: 11
-msgid "Your message"
-msgstr "მესიჯი"
+#~ msgid "Your email"
+#~ msgstr "ელ-ფოსტა"
 
-#: store/core/forms.py: 12
-msgid "Send message"
-msgstr "მესიჯის გაგზავნა"
+#~ msgid "Your phone"
+#~ msgstr "ტელეფონი"
 
-#: store/core/forms.py: 10
-msgid "First name"
-msgstr "სახელი"
+#~ msgid "message"
+#~ msgstr "მესიჯი"
 
-#: store/core/forms.py: 11
-msgid "Email"
-msgstr "ელ-ფოსტა"
+#~ msgid "Your message"
+#~ msgstr "მესიჯი"
 
-#: store/core/forms.py: 12
-msgid "Password"
-msgstr "პაროლი"
+#~ msgid "Send message"
+#~ msgstr "მესიჯის გაგზავნა"
 
-#: store/core/forms.py: 18
-msgid "Create Account"
-msgstr "ანგარიშის შექმნა"
+#~ msgid "First name"
+#~ msgstr "სახელი"
 
+#~ msgid "Email"
+#~ msgstr "ელ-ფოსტა"
 
-#: store/core/forms.py: 26
-msgid "First Name"
-msgstr "სახელი"
+#~ msgid "Password"
+#~ msgstr "პაროლი"
 
-#: store/core/forms.py: 27
-msgid "Last Name"
-msgstr "გვარი"
+#~ msgid "Create Account"
+#~ msgstr "ანგარიშის შექმნა"
 
-#: store/core/forms.py: 29
-msgid "Address"
-msgstr "მისამართი"
+#~ msgid "First Name"
+#~ msgstr "სახელი"
 
-#: store/core/forms.py: 30
-msgid "Password Changes"
-msgstr "პაროლის ცვლილება"
+#~ msgid "Last Name"
+#~ msgstr "გვარი"
 
-#: store/core/forms.py: 30
-msgid "Current Password"
-msgstr "დავიწყებით პაროლი?"
+#~ msgid "Address"
+#~ msgstr "მისამართი"
 
-msgid "password"
-msgstr "პაროლი"
+#~ msgid "Password Changes"
+#~ msgstr "პაროლის ცვლილება"
 
-#: store/core/forms.py: 31
-msgid "New Password"
-msgstr "პაროლი"
+#~ msgid "Current Password"
+#~ msgstr "დავიწყებით პაროლი?"
 
-#: store/core/forms.py: 32
-msgid "Confirm New Password"
-msgstr "დავიწყებით პაროლი?"
+#~ msgid "password"
+#~ msgstr "პაროლი"
 
-#: store/core/forms.py: 33
-msgid "Save Changes"
-msgstr "ცვლილებების შენახვა"
+#~ msgid "New Password"
+#~ msgstr "პაროლი"
 
-#: store/shop/forms.py: 7
-msgid "Colours:"
-msgstr "ფერები:"
+#~ msgid "Confirm New Password"
+#~ msgstr "დავიწყებით პაროლი?"
 
-#: store/shop/forms.py: 9
-msgid "Buy Now"
-msgstr "იყიდე ახლა"
+#~ msgid "Save Changes"
+#~ msgstr "ცვლილებების შენახვა"
 
-#: store/templates/home/home.html:17
-msgid "iPhone 14 Series"
-msgstr "აიფონ 14 სერიები"
+#~ msgid "Colours:"
+#~ msgstr "ფერები:"
 
-#: store/templates/home/home.html:19
-msgid "Up to 10 percent off Voucher"
-msgstr "10 პროცენტამდე ფასდაკლების ვაუჩერი"
+#~ msgid "Buy Now"
+#~ msgstr "იყიდე ახლა"
 
-#: store/templates/home/home.html:20
-msgid "Shop Now"
-msgstr "იშოპე ახლა"
