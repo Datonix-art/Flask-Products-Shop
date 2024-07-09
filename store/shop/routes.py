@@ -1,5 +1,5 @@
 import os
-from flask import Blueprint, jsonify, redirect, render_template, flash, current_app, url_for
+from flask import Blueprint, jsonify, redirect, render_template, flash, current_app, request, url_for
 from flask_login import login_required, current_user
 from store.shop.models import OrderModel, ProductModel, db, CategoryModel
 from store.shop.forms import BuyingForm, CheckoutForm
@@ -94,21 +94,22 @@ def category_product(category_id, page_id):
 @login_required
 def checkout():
    form = CheckoutForm()
-   cart_items = CartModel.query.filter_by(user_id=current_user.id).all()
+   user_id = current_user.id
+   cart_items = CartModel.query.filter_by(user_id=user_id).all()
    products = []
    total_price = 0
    
    for item in cart_items:
-    product = ProductModel.query.get(item.product_id)
-    product.amount = item.amount
-    total_price += product.amount * product.price
-    products.append(product)
-
+     product = ProductModel.query.get(item.product_id)
+     product.amount = item.amount
+     total_price += product.amount * product.price
+     products.append(product)
+   
    if form.validate_on_submit():
-      total_price = sum(item.price * item.amount for item in cart_items)
+      total_price = sum(product.price * item.amount for item in cart_items)
       
       order = OrderModel( 
-            user_id=current_user.id,
+            user_id=user_id,
             first_name=form.first_name.data,
             company_name=form.company_name.data,
             street_address=form.street_address.data,
@@ -123,5 +124,4 @@ def checkout():
 
       flash('Order created succesfully!', 'success')
       return redirect(url_for('core.base', order_id=order.id))
-
    return render_template('base.html', form=form, total_price=total_price, cart=products)

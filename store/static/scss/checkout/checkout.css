@@ -133,4 +133,39 @@
   background-color: black;
   opacity: 0.4;
   margin-bottom: 1em;
+}
+.checkout .billing_details .submitting_section {
+  width: 110%;
+  padding-top: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+.checkout .billing_details .submitting_section .coupon {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.checkout .billing_details .submitting_section .coupon input {
+  width: 50%;
+  padding: 1em 0;
+  padding-left: 1em;
+}
+.checkout .billing_details .submitting_section .checkout-btn {
+  padding: 1.4em 3em;
+  background-color: #db4444;
+  color: white;
+  border-radius: 4px;
+  border: 0;
+  transition: 0.5s ease-in-out all;
+}
+.checkout .billing_details .submitting_section .checkout-btn:hover {
+  background-color: white;
+  border: 1px solid #db4444;
+  color: #db4444;
 }/*# sourceMappingURL=checkout.css.map */

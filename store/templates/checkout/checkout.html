@@ -4,7 +4,8 @@
   <section class="checkout">
      <div class="billing_form">
        <h1>Billing Details</h1>
-       <form action="{{ url_for('core.base') }}" method="post" id="checkoutForm">
+       <form action="{{ url_for('shop.checkout') }}" method="post" id="checkoutForm">
+         {{ form.hidden_tag() }}
          <div>
            {{ form.first_name.label() }}
            {{ form.first_name() }}
@@ -67,11 +68,15 @@
             <p>Total:</p>
             <p>${{ total_price }}</p>
           </div>
+          <div class="submitting_section">
+            <section class="coupon">
+              <input type="text" placeholder="Coupon Code" min="6" max="6">
+              <button type="submit" class="checkout-btn">Apply Coupon</button>
+            </section>
+            {{ form.place_order(form='checkoutForm', class='checkout-btn') }}
+          </div>
+         </section>
         </div>
-       </section>
-       <button type="submit" form="checkoutForm">
-        {{ form.place_order }}
-       </button>
      </div>
   </section>
 {% endblock%}

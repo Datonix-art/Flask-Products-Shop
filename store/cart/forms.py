@@ -6,7 +6,6 @@ class CartItemForm(FlaskForm):
     new_amount = IntegerField('Amount', validators=[InputRequired(), NumberRange(min=1, max=100)])
     item_id = HiddenField('Item ID')  
 
-
 class CartForm(FlaskForm):
     items = FieldList(FormField(CartItemForm), min_entries=1)
     update_cart = SubmitField('Update Cart')

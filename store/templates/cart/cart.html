@@ -54,23 +54,20 @@
                   </tr>
                   {% endfor %}
               </tbody>
-              <tfoot>
-                {{ form.update_cart() }}
-             </tfoot>
             </form>
           </table>
 
           <section class="cart__footer">
             <div class="cart__redirects">
-                   
-                <a href="/home">
-                  Return To Shop
-                </a>
-
-                <a href="/cart/clear_cart">
-                  <button type="submit">Clear Cart</button>
-                </a>
-            
+              <a href="/home">
+                Return To Shop
+              </a>
+              
+              <a href="/cart/clear_cart">
+                <button type="submit">Clear Cart</button>
+              </a>
+              
+              {{ form.update_cart(form='cartForm') }}
             </div>
             
             <div class="cart__checkout_redirect">

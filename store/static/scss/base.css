@@ -289,7 +289,7 @@ header .Top-Nav .wrapper .dropdown-content {
   position: absolute;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  translate: -120px 140px;
+  translate: -120px 110px;
   z-index: 1;
   padding: 0.5em;
   backdrop-filter: blur(15px);
@@ -313,9 +313,12 @@ header .Top-Nav .wrapper .dropdown-content div a {
   display: block;
   font-size: 14px;
 }
+header .Top-Nav .wrapper .dropdown-content div a:hover {
+  color: #db4444;
+}
 header .Top-Nav .wrapper .dropdown-content div a::after {
   content: "";
-  background-color: black;
+  background-color: #db4444;
   height: 3px;
   margin: auto;
   margin-top: 3px;

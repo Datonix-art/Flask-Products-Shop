@@ -88,8 +88,7 @@ def update_cart():
       for item in cart_items:
         if item.id == item_id:
           cart_item = item
-        else:
-          flash('error', 'danger')
+          break
 
 
       if cart_item:
