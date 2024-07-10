@@ -1,4 +1,4 @@
-from store.BaseModel import BaseModel, db
+from store.base_model import BaseModel, db
 
 class CartModel(db.Model, BaseModel):
   __tablename__ = 'carts'

@@ -1,1 +1,8 @@
-*.pyc
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+__pycache__
+store/__pycache__
+store/cart/__pycache__
+store/core/__pycache__
+store/shop/__pycache__
+.vscode

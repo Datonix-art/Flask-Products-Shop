@@ -1,5 +1,5 @@
 from store.core.models import UserModel
-from store.BaseModel import BaseModel
+from store.base_model import BaseModel
 from store import db
 from sqlalchemy import func
 
@@ -27,7 +27,7 @@ class ProductModel(db.Model, BaseModel):
 
     def __repr__(self):
         return f'id: {self.id} - Name: {self.name} - Rs. {self.price}'
-    
+
 class OrderModel(db.Model, BaseModel):
     __tablename__ = 'orders'
     id = db.Column(db.Integer, primary_key=True)
@@ -41,5 +41,3 @@ class OrderModel(db.Model, BaseModel):
     email = db.Column(db.String(50), nullable=False)
     total_price = db.Column(db.Integer, nullable=False)
     created_at = db.Column(db.DateTime, default=func.now())
-
-    
