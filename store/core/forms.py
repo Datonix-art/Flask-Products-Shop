@@ -3,7 +3,6 @@ from wtforms.fields import StringField, EmailField, IntegerField, TextAreaField,
 from wtforms.validators import DataRequired, Length, Optional, EqualTo
 from flask_babel import lazy_gettext
 
-
 class ContactForm(FlaskForm):
     name = StringField(lazy_gettext('Name'), validators=[DataRequired(), Length(min=3, max=15)], render_kw={'placeholder': lazy_gettext('Your name')})
     email = EmailField(lazy_gettext('Email'), validators=[DataRequired()], render_kw={'placeholder': lazy_gettext('Your email')})
