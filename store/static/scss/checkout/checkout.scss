@@ -127,7 +127,8 @@
       gap: 32px;
 
       .coupon {
-        @include flexbox(row, space-between, center, wrap);
+        @include flexbox(row, space-between, center, nowrap);
+        gap: .5em; 
 
         input {
           width: 50%;
@@ -143,6 +144,7 @@
         border-radius: 4px;
         border: 0;
         transition: .5s ease-in-out all;
+        min-width: fit-content;  
 
         &:hover {
           background-color: white;

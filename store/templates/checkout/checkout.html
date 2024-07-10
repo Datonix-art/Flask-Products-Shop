@@ -70,7 +70,7 @@
           </div>
           <div class="submitting_section">
             <section class="coupon">
-              <input type="text" placeholder="Coupon Code" min="6" max="6">
+              <input type="text" placeholder="{{ _('Coupon Code') }}" min="6" max="6">
               <button type="submit" class="checkout-btn">{{ _('Apply Coupon') }}</button>
             </section>
             {{ form.place_order(form='checkoutForm', class='checkout-btn') }}

@@ -531,78 +531,107 @@ msgstr "შესვლა"
 msgid "Forgot Password?"
 msgstr "დავიწყებით პაროლი?"
 
-#~ msgid "name"
-#~ msgstr "სახელი"
+msgid "name"
+msgstr "სახელი"
 
-#~ msgid "email"
-#~ msgstr "ელ-ფოსტა"
+msgid "email"
+msgstr "ელ-ფოსტა"
 
-#~ msgid "phone"
-#~ msgstr "ტელეფონი"
+msgid "phone"
+msgstr "ტელეფონი"
 
-#~ msgid "My Reviews"
-#~ msgstr "ჩემი მიმოხილვები"
+msgid "My Reviews"
+msgstr "ჩემი მიმოხილვები"
 
-#~ msgid "Your name"
-#~ msgstr "სახელი"
+msgid "Your name"
+msgstr "სახელი"
 
-#~ msgid "Your email"
-#~ msgstr "ელ-ფოსტა"
+msgid "Your email"
+msgstr "ელ-ფოსტა"
 
-#~ msgid "Your phone"
-#~ msgstr "ტელეფონი"
+msgid "Your phone"
+msgstr "ტელეფონი"
 
-#~ msgid "message"
-#~ msgstr "მესიჯი"
+msgid "message"
+msgstr "მესიჯი"
 
-#~ msgid "Your message"
-#~ msgstr "მესიჯი"
+msgid "Your message"
+msgstr "მესიჯი"
 
-#~ msgid "Send message"
-#~ msgstr "მესიჯის გაგზავნა"
+msgid "Send message"
+msgstr "მესიჯის გაგზავნა"
 
-#~ msgid "First name"
-#~ msgstr "სახელი"
+msgid "First name"
+msgstr "სახელი"
 
-#~ msgid "Email"
-#~ msgstr "ელ-ფოსტა"
+msgid "Email"
+msgstr "ელ-ფოსტა"
 
-#~ msgid "Password"
-#~ msgstr "პაროლი"
+msgid "Password"
+msgstr "პაროლი"
 
-#~ msgid "Create Account"
-#~ msgstr "ანგარიშის შექმნა"
+msgid "Create Account"
+msgstr "ანგარიშის შექმნა"
 
-#~ msgid "First Name"
-#~ msgstr "სახელი"
+msgid "First Name"
+msgstr "სახელი"
 
-#~ msgid "Last Name"
-#~ msgstr "გვარი"
+msgid "Last Name"
+msgstr "გვარი"
 
-#~ msgid "Address"
-#~ msgstr "მისამართი"
+msgid "Address"
+msgstr "მისამართი"
 
-#~ msgid "Password Changes"
-#~ msgstr "პაროლის ცვლილება"
+msgid "Password Changes"
+msgstr "პაროლის ცვლილება"
 
-#~ msgid "Current Password"
-#~ msgstr "დავიწყებით პაროლი?"
+msgid "Current Password"
+msgstr "დავიწყებით პაროლი?"
 
-#~ msgid "password"
-#~ msgstr "პაროლი"
+msgid "password"
+msgstr "პაროლი"
 
-#~ msgid "New Password"
-#~ msgstr "პაროლი"
+msgid "New Password"
+msgstr "პაროლი"
 
-#~ msgid "Confirm New Password"
-#~ msgstr "დავიწყებით პაროლი?"
+msgid "Confirm New Password"
+msgstr "დავიწყებით პაროლი?"
 
-#~ msgid "Save Changes"
-#~ msgstr "ცვლილებების შენახვა"
+msgid "Save Changes"
+msgstr "ცვლილებების შენახვა"
 
-#~ msgid "Colours:"
-#~ msgstr "ფერები:"
+msgid "Colours:"
+msgstr "ფერები:"
 
-#~ msgid "Buy Now"
-#~ msgstr "იყიდე ახლა"
+msgid "Buy Now"
+msgstr "იყიდე ახლა"
 
+msgid "Update Cart"
+msgstr "კალათის განახლება"
+
+msgid "First Name*"
+msgstr "სახელი"
+
+msgid "Company Name"
+msgstr "კომპანიის სახელი"
+
+msgid "Street address*"
+msgstr "ქუჩის მისამართი"
+
+msgid "Apartment, floor, etc. (optional)"
+msgstr "ბინა, სართული და ა.შ."
+
+msgid "Town/City*"
+msgstr "ქალაქი"
+
+msgid "Phone Number*"
+msgstr "ტელეფონის ნომერი"
+
+msgid "Email*"
+msgstr "ელ. ფოსტა"
+
+msgid "Place Order"
+msgstr "შეკვეთა"
+
+msgid "Coupon Code"
+msgstr "კუპონის კოდი"

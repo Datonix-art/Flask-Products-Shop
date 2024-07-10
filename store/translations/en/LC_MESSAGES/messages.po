@@ -522,6 +522,35 @@ msgstr ""
 msgid "Forgot Password?"
 msgstr ""
 
-#~ msgid "Procees to checkout"
-#~ msgstr ""
+msgid "Procees to checkout"
+msgstr ""
 
+msgid "Update Cart"
+msgstr ""
+
+msgid "First Name*"
+msgstr ""
+
+msgid "Company Name"
+msgstr ""
+
+msgid "Street address*"
+msgstr ""
+
+msgid "Apartment, floor, etc. (optional)"
+msgstr ""
+
+msgid "Town/City*"
+msgstr ""
+
+msgid "Phone Number*"
+msgstr ""
+
+msgid "Email*"
+msgstr ""
+
+msgid "Place Order"
+msgstr ""
+
+msgid "Coupon Code"
+msgstr "" 
