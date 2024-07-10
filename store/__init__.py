@@ -27,7 +27,7 @@ app.config['SECRET_KEY'] = os.getenv("SECRET_KEY")
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(os.getcwd(), os.getenv('SQLALCHEMY_DATABASE_URI'))
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = os.getenv('SQLALCHEMY_TRACK_MODIFICATIONS')
 app.config['BABEL_DEFAULT_LOCALE'] = 'en'
-app.config['BABEL_TRANSLATION_DIRECTORIES'] = '../translations' 
+app.config['BABEL_TRANSLATION_DIRECTORIES'] = 'translations' 
 
 db = SQLAlchemy(app)
 
