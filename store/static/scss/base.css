@@ -261,7 +261,7 @@ header .Top-Nav .wrapper .connection {
   }
 }
 header .Top-Nav .wrapper .connection .tbc-logo {
-  padding-left: 75px;
+  margin-right: 1em;
 }
 @media (max-width: 1280px) {
   header .Top-Nav .wrapper .connection .tbc-logo {

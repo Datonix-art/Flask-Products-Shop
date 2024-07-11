@@ -34,16 +34,17 @@
           <a class="link" href="/about">{{ _('About') }}</a>
         </li>
         {% if current_user.is_authenticated %}
-        <li class="item">
-          <a class="link" href="/signup" style="visibility: hidden;">{{ _('Sign Up') }}</a>
-        </li>
+          <li class="item" style="display: none;">
+            <a class="link" href="/signup">{{ _('Sign Up') }}</a>
+          </li>
         {% else %}
-          <li class="item">
+          <li class="item" style="display: block;">
             <a class="link" href="/signup">{{ _('Sign Up') }}</a>
           </li>
         {% endif %}
       </ul>
-      <form role="search">
+      {% if current_user.is_authenticated or get_locale() == 'en' %}
+      <form role="search" style="margin-left: 9em;">
         <input type="search" placeholder="{{ _('What are you looking for?') }}" class="main-input">
         <button type="submit" class="main-btn">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
@@ -51,6 +52,16 @@
           </svg>
         </button>
       </form>
+      {% else %}
+      <form role="search" style="margin-left: 0;">
+        <input type="search" placeholder="{{ _('What are you looking for?') }}" class="main-input">
+        <button type="submit" class="main-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+          </svg>
+        </button>
+      </form>
+      {% endif %}
       <div class="d-flex align-items-center gap-4 connection">
         <a href="#">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
@@ -89,15 +100,10 @@
           </svg>
         </a>  
         {% endif %}
-        {% if get_locale() == 'ka' %}
-          <a href="https://www.tbceducation.ge/" target="_blank" class="tbc-logo" style="padding-left: 0 !important;translate: -10px; " >
-            <img src="{{ url_for('static', filename='images/თიბისი.png') }}" alt="tbc education" width="80" height="30">
-          </a>
-        {% else %}
           <a href="https://www.tbceducation.ge/" target="_blank" class="tbc-logo">
             <img src="{{ url_for('static', filename='images/თიბისი.png') }}" alt="tbc education" width="80" height="30">
           </a>
-        {% endif %}
+        
       </div>
     </div>
   </nav>
