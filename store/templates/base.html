@@ -66,6 +66,8 @@
          {% include 'cart/cart.html' %}
       {% elif request.path == '/checkout' %}
          {% include 'checkout/checkout.html' %}
+      {% elif request.path == '/favorite_products'%}
+         {% include 'favorite_products/favorite_products.html'%}
       {% endif %}
     {% include 'base/base_footer.html' %}
   {% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <section class="favorite_products">
+    <div class="flash_message">
+      {% for category, message in get_flashed_messages(with_categories=true) %}
+        <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+          {{ message }}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      {% endfor %}
+    </div>
+    {% for favorite_product in favorite_products %}
+      <section> 
+        <div class="image-container">
+          <div class="product_actions">
+            <a href="/product_details/{{ favorite_product.product.id }}">
+              <img src="{{ url_for('static', filename='images/visibility_24dp_FILL0_wght400_GRAD0_opsz24.png') }}" alt="vissibility" width="30">
+            </a>
+          </div>
+          <img src="{{ url_for('static', filename='images/product_images/' + favorite_product.product.image) }}" alt="{{ favorite_product.product.name }}" class="mainImg" width="30">   
+        </div>
+        <h2>{{ favorite_product.product.name }}</h2>
+        <span>${{ favorite_product.product.price }}</span>
+        <a href="/{{ favorite_product.product_id }}/add_to_cart" class="cartbtn">{{ _('Add To Cart') }}</a>
+        <a href="/delete_from_favorites/{{ favorite_product.product_id }}">{{ _('Delete from favorites') }}</a>
+      </section>
+    {% endfor %}
+    <a href="/clear_favorites">clear favorites</a>
+  </section>
+{% endblock %}
