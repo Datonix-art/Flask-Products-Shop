@@ -43,7 +43,7 @@
 </head>
 <body>
   {% block content%}
-    {% include 'base_header.html' %}
+    {% include 'base/base_header.html' %}
       {% if is_error %}
          {% include '404/404-error.html'%}
       {% elif request.path == '/home' or request.path == '/' %}
@@ -67,7 +67,7 @@
       {% elif request.path == '/checkout' %}
          {% include 'checkout/checkout.html' %}
       {% endif %}
-    {% include 'base_footer.html' %}
+    {% include 'base/base_footer.html' %}
   {% endblock %}
 
   {% if current_user.is_authenticated %}
