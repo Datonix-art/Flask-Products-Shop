@@ -2,7 +2,7 @@ from flask import redirect, render_template, url_for, Blueprint, flash
 from flask_login import logout_user, login_user, login_required, current_user
 from sqlalchemy.exc import IntegrityError
 from werkzeug.security import generate_password_hash
-from flask_babel import _, lazy_gettext
+from flask_babel import _
 from store.core.forms import LogInForm, SignUpForm, ContactForm, EditUserForm
 from store.core.models import UserModel, ContactModel
 from store.shop.models import ProductModel
