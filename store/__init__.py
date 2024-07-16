@@ -9,7 +9,7 @@ from store.config import Config
 db = SQLAlchemy()
 login_manager = LoginManager()
 babel = Babel()
-admin = Admin()
+admin = Admin(name='Admin Extension', template_mode='bootstrap4')
 
 def create_app():
     app = Flask(__name__, template_folder='templates')
@@ -58,9 +58,9 @@ def create_app():
 
     @app.context_processor
     def inject_locale():
-        return {'get_locale':get_locale}
+        return {'get_locale': get_locale}
     
-    from store.admin_views import AdminModelView
-    admin.init_app(app, index_view=AdminModelView(name='Admin Panel', template='admin/admin.html' ,url='/admin_panel'))
+    from store.Admin.views import AdminModelView
+    admin.init_app(app, index_view=AdminModelView(name='Admin Panel', template='admin/admin.html', url='/admin_panel'))
 
     return app
