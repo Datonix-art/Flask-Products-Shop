@@ -13,22 +13,10 @@ class AdminModelView(AdminIndexView):
             abort(404)     
     
 class UserAdminModelView(ModelView):
-    column_list = ['id', 'firstName', 'lastName', 'email', 'address']
-    column_exclude_list = ['password', ]
-    column_searchable_list = ['id', 'email', ]
-    column_editable_list = ['firstName', 'lastName']
-    column_filters = ['firstName']
-    create_modal = True
-    edit_modal = True
-    can_export = True
+    column_list = ('id', 'firstName', 'lastName', 'email', 'address')
+    column_searchable_list = ('firstName', )
+    column_filters = ('email', 'firstName')
 
-    def is_accessible(self):
-        return current_user.is_authenticated and current_user.email == 'ProductShopAdmin123@gmail.com'
-    
-    def inaccessible_callback(self, name, **kwargs):
-        return redirect(url_for('core.login'))
-
-class ContactAdminModelView(ModelView):
     def is_accessible(self):
         return current_user.is_authenticated and current_user.email == 'ProductShopAdmin123@gmail.com'
     
@@ -37,6 +25,5 @@ class ContactAdminModelView(ModelView):
 
 def setup_admin_views():
     admin.add_view(UserAdminModelView(UserModel, db.session, name='User Panel', endpoint='user_panel', category='User'))
-    admin.add_view(ContactAdminModelView(ContactModel, db.session, name='Contact Panel', endpoint='contact_panel', category='User'))
 
 setup_admin_views()
