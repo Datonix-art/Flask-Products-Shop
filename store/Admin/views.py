@@ -1,9 +1,10 @@
-from flask_admin.contrib.sqla import ModelView
-from flask_login import current_user
-from flask import abort, redirect, url_for
 from flask_admin import AdminIndexView
+from flask_admin.contrib.sqla import ModelView
+from flask import abort, redirect, url_for
+from flask_login import current_user
 from store import admin, db
-from store.core.models import ContactModel, UserModel
+import os
+
 
 class AdminModelView(AdminIndexView):
     def is_accessible(self):
@@ -11,7 +12,18 @@ class AdminModelView(AdminIndexView):
             return True
         else:
             abort(404)     
-    
+
+media_path = os.path.join(os.path.dirname(__file__), 'static/images/product_images/')
+
+try:
+    os.mkdir(media_path)
+except OSError:
+    pass
+
+from store.core.models import UserModel, ContactModel
+from store.shop.models import ProductModel, CategoryModel, OrderModel, FavoriteProductModel
+from store.cart.models import CartModel
+
 class UserAdminModelView(ModelView):
     column_list = ('id', 'firstName', 'lastName', 'email', 'address')
     column_searchable_list = ('firstName', )
