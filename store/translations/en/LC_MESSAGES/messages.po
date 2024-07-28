@@ -554,3 +554,30 @@ msgstr ""
 
 msgid "Coupon Code"
 msgstr "" 
+
+msgid "User Panel"
+msgstr ""
+
+msgid "Contact Panel"
+msgstr ""
+
+msgid "Product Panel"
+msgstr ""
+
+msgid "Order Panel"
+msgstr ""
+
+msgid "Id"
+msgstr ""
+
+msgid "Firstname"
+msgstr ""
+
+msgid "Lastname"
+msgstr ""
+
+msgid "Email"
+msgstr ""
+
+msgid "Address"
+msgstr ""

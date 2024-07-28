@@ -635,3 +635,30 @@ msgstr "შეკვეთა"
 
 msgid "Coupon Code"
 msgstr "კუპონის კოდი"
+
+msgid "User Panel"
+msgstr "მომხმარებლის პანელი"
+
+msgid "Contact Panel"
+msgstr "საკონტაქტო პანელი"
+
+msgid "Product Panel"
+msgstr "პროდუქტის პანელი"
+
+msgid "Order Panel"
+msgstr "შეკვეთის პანელი"
+
+msgid "Id"
+msgstr "Id"
+
+msgid "Firstname"
+msgstr "სახელი"
+
+msgid "Lastname"
+msgstr "გვარი"
+
+msgid "Email"
+msgstr "ელ-ფოსტა"
+
+msgid "Address"
+msgstr "მისამართი"

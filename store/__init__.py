@@ -1,7 +1,7 @@
 from flask import Flask, redirect, render_template, request, session, url_for
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
-from flask_babel import Babel, _, lazy_gettext
+from flask_babel import Babel, _, lazy_gettext, gettext
 from flask_login import LoginManager
 from flask_admin import Admin
 from flask_wtf import CSRFProtect
@@ -71,6 +71,8 @@ def create_app():
         return {'get_locale': get_locale}
     
     from store.Admin.views import AdminModelView
-    admin.init_app(app, index_view=AdminModelView(name='Home', template='admin/admin.html', url='/admin_panel'))
+    with app.test_request_context():
+
+        admin.init_app(app, index_view=AdminModelView(name=lazy_gettext('Home'), template='admin/admin.html', url='/admin_panel'))
      
     return app

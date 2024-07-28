@@ -1,9 +1,9 @@
+from flask import abort, current_app, url_for
 from flask_admin import AdminIndexView
 from flask_admin.contrib.sqla import ModelView
-from flask_admin.contrib.fileadmin import FileAdmin
 from flask_admin.form import ImageUploadField
-from flask import abort, current_app, url_for
 from flask_login import current_user
+from flask_babel import lazy_gettext, _
 from markupsafe import Markup
 from store import admin, db
 import PIL
@@ -77,7 +77,7 @@ class ProductAdminModelView(ImageView):
     can_edit = True
     can_create = True
     can_delete = True
-  
+
     def on_model_delete(self, model):
         if model.image:
             try: 
@@ -98,9 +98,10 @@ class OrderAdminModelView(ModelView):
 
 
 def setup_admin_views():
-    admin.add_view(UserAdminModelView(UserModel, db.session, name='User Panel', endpoint='user_panel'))
-    admin.add_view(ContactAdminModelView(ContactModel, db.session, name='Contact Panel', endpoint='contact_panel'))
-    admin.add_view(ProductAdminModelView(ProductModel, db.session, name='Product Panel', endpoint='product_model'))
-    admin.add_view(OrderAdminModelView(OrderModel, db.session, name='Order Panel', endpoint='order_model'))
+    with current_app.test_request_context():
+        admin.add_view(UserAdminModelView(UserModel, db.session, name=lazy_gettext('User Panel'), endpoint='user_panel'))
+        admin.add_view(ContactAdminModelView(ContactModel, db.session, name=lazy_gettext('Contact Panel'), endpoint='contact_panel'))
+        admin.add_view(ProductAdminModelView(ProductModel, db.session, name=lazy_gettext('Product Panel'), endpoint='product_model'))
+        admin.add_view(OrderAdminModelView(OrderModel, db.session, name=lazy_gettext('Order Panel'), endpoint='order_model'))
 
 setup_admin_views()
