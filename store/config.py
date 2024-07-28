@@ -12,3 +12,4 @@ class Config:
     BABEL_DEFAULT_LOCALE = 'en'
     BABEL_TRANSLATION_DIRECTORIES = 'translations'
     FLASK_ADMIN_SWATCH = 'yeti'
+    WTF_CSRF_SECRET_KEY = SECRET_KEY

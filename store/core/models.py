@@ -1,7 +1,8 @@
+from flask import current_app
 from werkzeug.security import generate_password_hash, check_password_hash
-from store.base_model import BaseModel
 from flask_login import UserMixin 
 from store import db
+from store.base_model import BaseModel
 
 class ContactModel(db.Model, BaseModel):
    __tablename__ = 'contacts'
@@ -35,4 +36,3 @@ class UserModel(db.Model, BaseModel, UserMixin):
    
    def __repr__(self):
       return self.email
-   

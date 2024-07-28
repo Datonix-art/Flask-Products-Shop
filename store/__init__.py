@@ -4,19 +4,24 @@ from flask_cors import CORS
 from flask_babel import Babel, _, lazy_gettext
 from flask_login import LoginManager
 from flask_admin import Admin
+from flask_wtf import CSRFProtect
+from flask_wtf.csrf import CSRFError
 from store.config import Config
 
+csrf = CSRFProtect()
 db = SQLAlchemy()
 login_manager = LoginManager()
 babel = Babel()
-admin = Admin(name='Admin panel', template_mode='bootstrap4')
+admin = Admin(name='', template_mode='bootstrap4')
 
 def create_app():
     app = Flask(__name__, template_folder='templates')
     app.app_context().push()
-
+ 
     CORS(app)
     
+    csrf.init_app(app)
+
     login_manager.init_app(app)
     login_manager.login_view = 'core.signup'
     login_manager.login_message = lazy_gettext('Please log in to access this page.')
@@ -43,6 +48,10 @@ def create_app():
     @app.errorhandler(404)
     def is_error(error):
         return render_template('base.html', is_error=True), 404
+    
+    @app.errorhandler(CSRFError)
+    def handle_csrf_error(error):
+        return render_template('base.html', reason=error.description), 400
 
     def get_locale():
         return session.get('lang', 'en')
@@ -55,12 +64,13 @@ def create_app():
         if lang in ['en', 'ka']:
             session['lang'] = lang
         return redirect(request.referrer or url_for('core.base'))
+    
 
     @app.context_processor
     def inject_locale():
         return {'get_locale': get_locale}
     
     from store.Admin.views import AdminModelView
-    admin.init_app(app, index_view=AdminModelView(name='Admin panel', template='admin/admin.html', url='/admin_panel'))
-
+    admin.init_app(app, index_view=AdminModelView(name='Home', template='admin/admin.html', url='/admin_panel'))
+     
     return app

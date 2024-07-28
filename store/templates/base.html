@@ -68,6 +68,12 @@
          {% include 'checkout/checkout.html' %}
       {% elif request.path == '/favorite_products'%}
          {% include 'favorite_products/favorite_products.html'%}
+      {% elif reason %}
+        <div class="d-flex justify-content-center">
+          <div class="alert alert-danger w-75 text-center mt-5">
+            <strong>Error:</strong>{{ reason }}
+          </div>
+        </div>
       {% endif %}
     {% include 'base/base_footer.html' %}
   {% endblock %}

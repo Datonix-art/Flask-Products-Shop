@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-07-09 14:32+0400\n"
+"POT-Creation-Date: 2024-07-27 10:33+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,157 +17,36 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.14.0\n"
 
-#: store/core/routes.py:27
+#: store/core/routes.py:26
 msgid "Succesfully sent message!"
 msgstr ""
 
-#: store/core/routes.py:41
+#: store/core/routes.py:40
 msgid "Succesfull sign up. Please Login"
 msgstr ""
 
-#: store/core/routes.py:44
+#: store/core/routes.py:43
 msgid "Account with this email already exists. Please sign up with other one"
 msgstr ""
 
-#: store/core/routes.py:54
+#: store/core/routes.py:53
 msgid "succesfull login!"
 msgstr ""
 
-#: store/core/routes.py:57
+#: store/core/routes.py:56
 msgid "Email or password is incorrect. Log in again"
 msgstr ""
 
-#: store/core/routes.py:64
+#: store/core/routes.py:63
 msgid "Logged out succesfully"
 msgstr ""
 
-#: store/core/routes.py:95
+#: store/core/routes.py:94
 msgid "Saved changes succesfully"
 msgstr ""
 
-#: store/core/routes.py:98
+#: store/core/routes.py:97
 msgid "Account already exists with this email"
-msgstr ""
-
-#: store/templates/base_footer.html:6 store/templates/base_header.html:19
-msgid "Exclusive"
-msgstr ""
-
-#: store/templates/base_footer.html:7
-msgid "Subscribe"
-msgstr ""
-
-#: store/templates/base_footer.html:8
-msgid "Get 10 off your first order"
-msgstr ""
-
-#: store/templates/base_footer.html:17
-msgid "Support"
-msgstr ""
-
-#: store/templates/base_footer.html:18
-msgid "111 Bijoy sarani, Dhaka,"
-msgstr ""
-
-#: store/templates/base_footer.html:18
-msgid "DH 1515, Bangladesh."
-msgstr ""
-
-#: store/templates/base_footer.html:19
-msgid "exclusive@gmail.com"
-msgstr ""
-
-#: store/templates/base_footer.html:20
-msgid "+88015-88888-9999"
-msgstr ""
-
-#: store/templates/account/account.html:14 store/templates/base_footer.html:23
-msgid "Account"
-msgstr ""
-
-#: store/templates/base_footer.html:24
-msgid "My Account"
-msgstr ""
-
-#: store/templates/base_footer.html:25
-msgid "Login / Register"
-msgstr ""
-
-#: store/templates/base_footer.html:26 store/templates/cart/cart.html:18
-msgid "Cart"
-msgstr ""
-
-#: store/templates/base_footer.html:27
-msgid "WishList"
-msgstr ""
-
-#: store/templates/base_footer.html:28
-msgid "Shop"
-msgstr ""
-
-#: store/templates/base_footer.html:31
-msgid "Quick Link"
-msgstr ""
-
-#: store/templates/base_footer.html:32
-msgid "Privacy Policy"
-msgstr ""
-
-#: store/templates/base_footer.html:33
-msgid "Terms of Use"
-msgstr ""
-
-#: store/templates/base_footer.html:34
-msgid "FAQ"
-msgstr ""
-
-#: store/templates/base_footer.html:35 store/templates/base_header.html:31
-#: store/templates/contacts/contacts.html:4
-msgid "Contact"
-msgstr ""
-
-#: store/templates/base_footer.html:38
-msgid "Download App"
-msgstr ""
-
-#: store/templates/base_footer.html:39
-msgid "Save $3 with App New User Only"
-msgstr ""
-
-#: store/templates/base_header.html:7
-msgid "Summer Sale For All Swim Suits And Free Express Delivery - OFF 50"
-msgstr ""
-
-#: store/templates/base_header.html:8
-msgid "ShopNow"
-msgstr ""
-
-#: store/templates/base_header.html:28 store/templates/cart/cart.html:18
-msgid "Home"
-msgstr ""
-
-#: store/templates/about/about.html:4 store/templates/base_header.html:34
-msgid "About"
-msgstr ""
-
-#: store/templates/base_header.html:38 store/templates/base_header.html:42
-msgid "Sign Up"
-msgstr ""
-
-#: store/templates/base_header.html:47
-msgid "What are you looking for?"
-msgstr ""
-
-#: store/templates/account/account.html:21 store/templates/base_header.html:74
-msgid "Manage My Account"
-msgstr ""
-
-#: store/templates/base_header.html:78
-msgid "My Order"
-msgstr ""
-
-#: store/templates/base_header.html:82
-msgid "Log out"
 msgstr ""
 
 #: store/templates/404/404-error.html:4
@@ -193,6 +72,10 @@ msgstr ""
 #: store/templates/about/about.html:4 store/templates/account/account.html:14
 #: store/templates/contacts/contacts.html:4
 msgid "Home / "
+msgstr ""
+
+#: store/templates/about/about.html:4 store/templates/base/base_header.html:35
+msgid "About"
 msgstr ""
 
 #: store/templates/about/about.html:8
@@ -295,8 +178,18 @@ msgstr ""
 msgid "We return money within 30 days"
 msgstr ""
 
+#: store/templates/account/account.html:14
+#: store/templates/base/base_footer.html:23
+msgid "Account"
+msgstr ""
+
 #: store/templates/account/account.html:15
 msgid "Welcome!"
+msgstr ""
+
+#: store/templates/account/account.html:21
+#: store/templates/base/base_header.html:86
+msgid "Manage My Account"
 msgstr ""
 
 #: store/templates/account/account.html:23
@@ -331,14 +224,132 @@ msgstr ""
 msgid "Payments"
 msgstr ""
 
+#: store/templates/admin/admin.html:4
+msgid "Hello to admin Panel"
+msgstr ""
+
 #: store/templates/all_products/all_products.html:13
 msgid "All Products"
 msgstr ""
 
 #: store/templates/all_products/all_products.html:32
 #: store/templates/category_product/category_product.html:22
+#: store/templates/favorite_products/favorite_products.html:25
 #: store/templates/home/home.html:91
 msgid "Add To Cart"
+msgstr ""
+
+#: store/templates/base/base_footer.html:6
+#: store/templates/base/base_header.html:20
+msgid "Exclusive"
+msgstr ""
+
+#: store/templates/base/base_footer.html:7
+msgid "Subscribe"
+msgstr ""
+
+#: store/templates/base/base_footer.html:8
+msgid "Get 10 off your first order"
+msgstr ""
+
+#: store/templates/base/base_footer.html:17
+msgid "Support"
+msgstr ""
+
+#: store/templates/base/base_footer.html:18
+msgid "111 Bijoy sarani, Dhaka,"
+msgstr ""
+
+#: store/templates/base/base_footer.html:18
+msgid "DH 1515, Bangladesh."
+msgstr ""
+
+#: store/templates/base/base_footer.html:19
+msgid "exclusive@gmail.com"
+msgstr ""
+
+#: store/templates/base/base_footer.html:20
+msgid "+88015-88888-9999"
+msgstr ""
+
+#: store/templates/base/base_footer.html:24
+msgid "My Account"
+msgstr ""
+
+#: store/templates/base/base_footer.html:25
+msgid "Login / Register"
+msgstr ""
+
+#: store/templates/base/base_footer.html:26 store/templates/cart/cart.html:18
+msgid "Cart"
+msgstr ""
+
+#: store/templates/base/base_footer.html:27
+msgid "WishList"
+msgstr ""
+
+#: store/templates/base/base_footer.html:28
+msgid "Shop"
+msgstr ""
+
+#: store/templates/base/base_footer.html:31
+msgid "Quick Link"
+msgstr ""
+
+#: store/templates/base/base_footer.html:32
+msgid "Privacy Policy"
+msgstr ""
+
+#: store/templates/base/base_footer.html:33
+msgid "Terms of Use"
+msgstr ""
+
+#: store/templates/base/base_footer.html:34
+msgid "FAQ"
+msgstr ""
+
+#: store/templates/base/base_footer.html:35
+#: store/templates/base/base_header.html:32
+#: store/templates/contacts/contacts.html:4
+msgid "Contact"
+msgstr ""
+
+#: store/templates/base/base_footer.html:38
+msgid "Download App"
+msgstr ""
+
+#: store/templates/base/base_footer.html:39
+msgid "Save $3 with App New User Only"
+msgstr ""
+
+#: store/templates/base/base_header.html:7
+msgid "Summer Sale For All Swim Suits And Free Express Delivery - OFF 50"
+msgstr ""
+
+#: store/templates/base/base_header.html:8
+msgid "ShopNow"
+msgstr ""
+
+#: store/templates/base/base_header.html:29 store/templates/cart/cart.html:18
+msgid "Home"
+msgstr ""
+
+#: store/templates/base/base_header.html:39
+#: store/templates/base/base_header.html:43
+msgid "Sign Up"
+msgstr ""
+
+#: store/templates/base/base_header.html:49
+#: store/templates/base/base_header.html:58
+msgid "What are you looking for?"
+msgstr ""
+
+#: store/templates/base/base_header.html:90
+msgid "My Order"
+msgstr ""
+
+#: store/templates/base/base_header.html:94
+msgid "Log out"
 msgstr ""
 
 #: store/templates/cart/cart.html:28
@@ -366,7 +377,7 @@ msgstr ""
 msgid "Clear Cart"
 msgstr ""
 
-#: store/templates/cart/cart.html:75
+#: store/templates/cart/cart.html:75 store/templates/checkout/checkout.html:73
 msgid "Coupon Code"
 msgstr ""
 
@@ -432,6 +443,10 @@ msgstr ""
 
 #: store/templates/contacts/contacts.html:31
 msgid "Emails: support@exclusive.com"
+msgstr ""
+
+#: store/templates/favorite_products/favorite_products.html:26
+msgid "Delete from favorites"
 msgstr ""
 
 #: store/templates/home/home.html:17

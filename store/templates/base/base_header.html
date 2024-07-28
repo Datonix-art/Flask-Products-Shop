@@ -8,6 +8,7 @@
         <a href="/all_products/1" class="Discount--link">{{ _('ShopNow') }}</a>      
       </div>
       <form action="{{ url_for('setlang') }}" method="post">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
         <select name="lang" id="lang" class="page_translation" onchange="this.form.submit()">
           <option value="en" {% if get_locale() == 'en' %} selected {% endif %}>English</option>
           <option value="ka" {% if get_locale() == 'ka' %} selected {% endif %} >ქართული</option>
