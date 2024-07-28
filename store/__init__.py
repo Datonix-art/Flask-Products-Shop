@@ -1,7 +1,7 @@
 from flask import Flask, redirect, render_template, request, session, url_for
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
-from flask_babel import Babel, _, lazy_gettext, gettext
+from flask_babel import Babel, _, lazy_gettext
 from flask_login import LoginManager
 from flask_admin import Admin
 from flask_wtf import CSRFProtect
@@ -31,13 +31,15 @@ def create_app():
 
     db.init_app(app)
    
-    from store.core.routes import core
-    from store.cart.routes import cart
-    from store.shop.routes import shop
+    from store.core.routes import core_bp
+    from store.cart.routes import cart_bp
+    from store.shop.routes import shop_bp
+    from store.payments.routes import payment_bp
 
-    app.register_blueprint(core)
-    app.register_blueprint(cart)
-    app.register_blueprint(shop)
+    app.register_blueprint(core_bp)
+    app.register_blueprint(cart_bp)
+    app.register_blueprint(shop_bp)
+    app.register_blueprint(payment_bp)
 
     from store.core.models import UserModel
 

@@ -7,15 +7,15 @@ from store.core.forms import LogInForm, SignUpForm, ContactForm, EditUserForm
 from store.core.models import UserModel, ContactModel
 from store.shop.models import ProductModel
 
-core = Blueprint('core', __name__, template_folder='templates')
+core_bp = Blueprint('core_bp', __name__, template_folder='templates')
 
-@core.route('/')
-@core.route('/home')
+@core_bp.route('/')
+@core_bp.route('/home')
 def base():
     products = ProductModel.query.order_by(ProductModel.id.desc()).limit(4)
     return render_template('base.html', products=products)
 
-@core.route('/contacts', methods=["GET", "POST"])
+@core_bp.route('/contacts', methods=["GET", "POST"])
 @login_required
 def contacts():
     contactform = ContactForm()
@@ -24,12 +24,12 @@ def contacts():
             data = ContactModel(name=contactform.name.data, email=contactform.email.data, phoneNumber = contactform.phoneNumber.data, message = contactform.message.data) # type: ignore
             data.create()
             flash(_('Succesfully sent message!'), 'success')
-            return redirect(url_for('core.base'))
+            return redirect(url_for('core_bp.base'))
         except IntegrityError as err:
             print(err._message())
     return render_template('base.html', form=contactform)
 
-@core.route('/signup', methods=["GET", "POST"])
+@core_bp.route('/signup', methods=["GET", "POST"])
 def signup():
     signupform = SignUpForm()
     if signupform.validate_on_submit():
@@ -38,12 +38,12 @@ def signup():
             data = UserModel(firstName = signupform.name.data, lastName=None, email = signupform.email.data, address=None, password = signupform.password.data) #type: ignore
             data.create()
             flash(_('Succesfull sign up. Please Login'), 'success')
-            return redirect(url_for('core.login'))
+            return redirect(url_for('core_bp.login'))
         else:
             flash(_('Account with this email already exists. Please sign up with other one'), 'danger')
     return render_template('base.html', form=signupform)
 
-@core.route('/login', methods=["GET", "POST"])
+@core_bp.route('/login', methods=["GET", "POST"])
 def login():
     loginform = LogInForm()
     if loginform.validate_on_submit():
@@ -51,23 +51,23 @@ def login():
         if user and user.check_password(loginform.password.data):
             login_user(user)
             flash(_('succesfull login!'), 'success')
-            return redirect(url_for('core.base'))
+            return redirect(url_for('core_bp.base'))
         else:
             flash(_('Email or password is incorrect. Log in again'), 'danger')
     return render_template('base.html', form=loginform)
 
-@core.route('/logout', methods=["GET", "POST"]) # type: ignore
+@core_bp.route('/logout', methods=["GET", "POST"]) # type: ignore
 @login_required
 def logout():
     logout_user()
     flash(_('Logged out succesfully'), 'success')
-    return redirect(url_for('core.base'))
+    return redirect(url_for('core_bp.base'))
 
-@core.route('/about')
+@core_bp.route('/about')
 def about():
     return render_template('base.html')
 
-@core.route('/account/profile', methods=["GET", "POST"])
+@core_bp.route('/account/profile', methods=["GET", "POST"])
 @login_required
 def profile():
     form = EditUserForm()
@@ -92,7 +92,7 @@ def profile():
           
             current_user.save()
             flash(_('Saved changes succesfully'), 'success')
-            return redirect(url_for('core.profile'))
+            return redirect(url_for('core_bp.profile'))
         else:
             flash(_('Account already exists with this email'), 'danger')
     return render_template('base.html', form=form)

@@ -4,15 +4,15 @@ from store.cart.models import CartModel, db
 from store.cart.forms import CartForm
 from store.shop.models import ProductModel
 
-cart = Blueprint('cart', __name__, template_folder='templates')
+cart_bp = Blueprint('cart_bp', __name__, template_folder='templates')
 
-@cart.app_template_filter('truncate')
+@cart_bp.app_template_filter('truncate')
 def truncate(s, length=15):
     if len(s) > length:
         return s[:length] + '...'
     return s
 
-@cart.route('/cart')
+@cart_bp.route('/cart_bp')
 @login_required
 def shopping_cart():
     user_id = current_user.id
@@ -28,7 +28,7 @@ def shopping_cart():
         products.append(product)
     return render_template('base.html', cart=products,  total_price=total_price, form=form)
 
-@cart.route('/<int:product_id>/add_to_cart', methods=['GET', 'POST'])
+@cart_bp.route('/<int:product_id>/add_to_cart', methods=['GET', 'POST'])
 @login_required
 def add_to_cart(product_id):
     user_id = current_user.id
@@ -43,9 +43,9 @@ def add_to_cart(product_id):
         cart.create()
         flash('succesfully added product to the cart', 'success')
       
-    return redirect(url_for('cart.shopping_cart'))
+    return redirect(url_for('cart_bp.shopping_cart'))
 
-@cart.route('/cart/<int:product_id>/remove_from_cart', methods=["GET", "POST"])
+@cart_bp.route('/cart/<int:product_id>/remove_from_cart', methods=["GET", "POST"])
 @login_required
 def remove_from_cart(product_id):
     user_id = current_user.id
@@ -54,9 +54,9 @@ def remove_from_cart(product_id):
     for cart_item in cart_items:
         cart_item.delete()
 
-    return redirect(url_for('cart.shopping_cart'))
+    return redirect(url_for('cart_bp.shopping_cart'))
 
-@cart.route('/cart/clear_cart', methods=['GET', 'POST'])
+@cart_bp.route('/cart/clear_cart', methods=['GET', 'POST'])
 @login_required
 def cleart_cart():
     user_id = current_user.id
@@ -65,10 +65,10 @@ def cleart_cart():
     for cart_item in cart_items:
         cart_item.delete()
 
-    return redirect(url_for('cart.shopping_cart'))
+    return redirect(url_for('cart_bp.shopping_cart'))
 
 
-@cart.route('/cart/update_cart', methods=['GET','POST'])
+@cart_bp.route('/cart/update_cart', methods=['GET','POST'])
 @login_required
 def update_cart():
       user_id = current_user.id
@@ -105,4 +105,4 @@ def update_cart():
               for error in errors:
                   flash(f'Error in field {field}: {error}', 'danger')
   
-      return redirect(url_for('cart.shopping_cart'))
+      return redirect(url_for('cart_bp.shopping_cart'))
