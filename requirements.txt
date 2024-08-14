@@ -32,3 +32,4 @@ WTForms==3.0.1
 WTForms-Components==0.10.5
 itsdangerous
 stripe
+Pillow==10.0.0
