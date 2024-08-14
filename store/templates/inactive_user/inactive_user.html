@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+  <div class="flash_message">
+    {% for category, message in get_flashed_messages(with_categories=true) %}
+      <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    {% endfor %}
+  </div>
+  <section class="inactive_user text-center">
+    <h1>{{ _('Welcome') }}!</h1>
+    <br />
+    <p>
+    {{ 
+      _(
+       '
+        You have not confirmed your account. Please check your inbox (and your spam
+        folder) - you should have received an email with a confirmation link.
+        '
+      )
+    }}
+    </p>
+    <p>
+    {{ _("Didn't get the email") }}?
+    <a href="{{ url_for('core_bp.resend_email_verification') }}">Resend</a>.
+    </p>
+  </section>
+{% endblock %}

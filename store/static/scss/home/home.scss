@@ -6,7 +6,6 @@
   @extend %width;
   padding: 0 60px;
 
-  // flash message
   .flash_message {
     width: 100%;
     padding: 1em;
@@ -36,12 +35,14 @@
     }
 
     .iphone__image {
-      @media (max-width: 750px) {
-        width: 250px;
-      }
+      width: 100%;
+      height: auto;
 
-      @media (max-width: 440px) {
-        width: 150px;
+      @media (max-width: 1178px ) {
+        margin-inline: auto;
+        width: 100%;
+        max-width: 90%;
+        height: auto;
       }
     }
  
@@ -68,19 +69,10 @@
       }
 
       h1 {
-        font-size: 3rem;
+        font-size: 3.5vw;
         line-height: 1.25;
-        width: 130%;
+        width: 100%;
         letter-spacing: 1.92px;
-
-        @media (max-width: 580px) {
-         font-size: 2rem; 
-        }
-
-        @media (max-width: 440px) {
-          font-size: 1.6rem;
-        }
-
       }
 
       a {
@@ -206,13 +198,8 @@
 
           .mainImg {
             width: 120px;
-            translate: -30px;
-    
-            @media (max-width: 750px) {
-              width: 100%;
-              translate: -30px -30px;
-            }
-
+            height: auto;
+            translate: -3vw;
           }
         }
 

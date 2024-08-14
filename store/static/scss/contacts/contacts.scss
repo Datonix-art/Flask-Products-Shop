@@ -170,9 +170,19 @@
       }
 
       div:nth-child(3) {
-        input {
-          padding: 1em 3em;
+        display: flex;
+        align-items: center;
+
+        @media (max-width: 960px) {
+          flex-direction: column-reverse;
+          gap: 1em;
+        }
+
+        #formPopup {
+          margin-right: 1.5em;
           display: block;
+          height: 50px;
+          padding: 1em 2em;
           color: white;
           text-align: center;
           background-color: #db4444;
@@ -180,14 +190,8 @@
           text-indent: 0;
           float: right;
 
-          @media (max-width: 1300px) {
-            float: none;
-            margin-inline: auto;
-          }
-
-          @media (max-width: 480px) {
-            padding: .5em 1.5em;
-            margin-inline: auto;
+          @media (max-width: 485px) {
+            font-size: 3vw;
           }
         }
       }

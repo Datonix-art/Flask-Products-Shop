@@ -289,7 +289,7 @@ header .Top-Nav .wrapper .dropdown-content {
   position: absolute;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  translate: -120px 110px;
+  translate: -120px 87px;
   z-index: 1;
   padding: 0.5em;
   backdrop-filter: blur(15px);

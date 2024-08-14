@@ -8,45 +8,105 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-07-28 11:12+0400\n"
+"POT-Creation-Date: 2024-08-14 15:05+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.14.0\n"
-
-#: store/core/routes.py:26
-msgid "Succesfully sent message!"
-msgstr ""
+"Generated-By: Babel 2.16.0\n"
 
 #: store/core/routes.py:40
-msgid "Succesfull sign up. Please Login"
+msgid "Successfully sent message!"
 msgstr ""
 
 #: store/core/routes.py:43
-msgid "Account with this email already exists. Please sign up with other one"
+msgid "An error occurred while sending your message."
 msgstr ""
 
-#: store/core/routes.py:53
-msgid "succesfull login!"
+#: store/core/routes.py:68
+msgid "A confirmation email has been sent via email."
 msgstr ""
 
-#: store/core/routes.py:56
-msgid "Email or password is incorrect. Log in again"
+#: store/core/routes.py:71
+msgid "Account with this email already exists. Please sign up with another one"
 msgstr ""
 
-#: store/core/routes.py:63
-msgid "Logged out succesfully"
+#: store/core/routes.py:81
+msgid "Successful login!"
 msgstr ""
 
-#: store/core/routes.py:94
-msgid "Saved changes succesfully"
+#: store/core/routes.py:84
+msgid "Email or password is incorrect. Please try again."
 msgstr ""
 
-#: store/core/routes.py:97
+#: store/core/routes.py:100
+msgid "An email has been sent with instructions to reset your password."
+msgstr ""
+
+#: store/core/routes.py:102
+msgid "That email account is not associated with any account."
+msgstr ""
+
+#: store/core/routes.py:111
+msgid "This is an invalid or expired token."
+msgstr ""
+
+#: store/core/routes.py:118
+msgid "Your password has been updated!"
+msgstr ""
+
+#: store/core/routes.py:126
+msgid "Logged out successfully"
+msgstr ""
+
+#: store/core/routes.py:133
+msgid "Account is already verified."
+msgstr ""
+
+#: store/core/routes.py:141
+msgid "You have verified your account. Thanks!"
+msgstr ""
+
+#: store/core/routes.py:143
+msgid "The confirmation link is invalid or has expired"
+msgstr ""
+
+#: store/core/routes.py:150
+msgid "Your account is already verified"
+msgstr ""
+
+#: store/core/routes.py:157
+msgid "A new confirmation email has been sent."
+msgstr ""
+
+#: store/core/routes.py:175
+msgid "To access the account page you must be verified"
+msgstr ""
+
+#: store/core/routes.py:198
+msgid "Saved changes successfully"
+msgstr ""
+
+#: store/core/routes.py:201
 msgid "Account already exists with this email"
+msgstr ""
+
+#: store/payments/routes.py:32
+msgid "To access account page you must be verified"
+msgstr ""
+
+#: store/payments/routes.py:81
+msgid "Payment was succesfull"
+msgstr ""
+
+#: store/payments/routes.py:83
+msgid "Payment was cancelled"
+msgstr ""
+
+#: store/payments/routes.py:85
+msgid "An unknow error occured"
 msgstr ""
 
 #: store/templates/404/404-error.html:4
@@ -234,8 +294,9 @@ msgstr ""
 
 #: store/templates/all_products/all_products.html:32
 #: store/templates/category_product/category_product.html:22
-#: store/templates/favorite_products/favorite_products.html:25
+#: store/templates/favorite_products/favorite_products.html:31
 #: store/templates/home/home.html:91
+#: store/templates/search_results/search_results.html:23
 msgid "Add To Cart"
 msgstr ""
 
@@ -345,10 +406,6 @@ msgid "What are you looking for?"
 msgstr ""
 
 #: store/templates/base/base_header.html:90
-msgid "My Order"
-msgstr ""
-
-#: store/templates/base/base_header.html:94
 msgid "Log out"
 msgstr ""
 
@@ -364,48 +421,48 @@ msgstr ""
 msgid "Quantity"
 msgstr ""
 
-#: store/templates/cart/cart.html:31 store/templates/cart/cart.html:83
+#: store/templates/cart/cart.html:31 store/templates/cart/cart.html:82
 #: store/templates/checkout/checkout.html:58
 msgid "SubTotal"
 msgstr ""
 
-#: store/templates/cart/cart.html:63
+#: store/templates/cart/cart.html:62
 msgid "Return To Shop"
 msgstr ""
 
-#: store/templates/cart/cart.html:67
+#: store/templates/cart/cart.html:66
 msgid "Clear Cart"
 msgstr ""
 
-#: store/templates/cart/cart.html:75 store/templates/checkout/checkout.html:73
+#: store/templates/cart/cart.html:74 store/templates/checkout/checkout.html:73
 msgid "Coupon Code"
 msgstr ""
 
-#: store/templates/cart/cart.html:76 store/templates/checkout/checkout.html:74
+#: store/templates/cart/cart.html:75 store/templates/checkout/checkout.html:74
 msgid "Apply Coupon"
 msgstr ""
 
-#: store/templates/cart/cart.html:81
+#: store/templates/cart/cart.html:80
 msgid "Cart Total"
 msgstr ""
 
-#: store/templates/cart/cart.html:88 store/templates/checkout/checkout.html:63
+#: store/templates/cart/cart.html:87 store/templates/checkout/checkout.html:63
 msgid "Shipping"
 msgstr ""
 
-#: store/templates/cart/cart.html:89 store/templates/checkout/checkout.html:64
+#: store/templates/cart/cart.html:88 store/templates/checkout/checkout.html:64
 msgid "Free"
 msgstr ""
 
-#: store/templates/cart/cart.html:93 store/templates/checkout/checkout.html:68
+#: store/templates/cart/cart.html:92 store/templates/checkout/checkout.html:68
 msgid "Total"
 msgstr ""
 
-#: store/templates/cart/cart.html:97
+#: store/templates/cart/cart.html:96
 msgid "Proceed to checkout"
 msgstr ""
 
-#: store/templates/cart/cart.html:109
+#: store/templates/cart/cart.html:108
 msgid "No items in cart"
 msgstr ""
 
@@ -415,6 +472,10 @@ msgstr ""
 
 #: store/templates/checkout/checkout.html:39
 msgid "Save this information for faster check-out next time"
+msgstr ""
+
+#: store/templates/checkout/checkout.html:76
+msgid "Place Order"
 msgstr ""
 
 #: store/templates/contacts/contacts.html:14
@@ -445,8 +506,20 @@ msgstr ""
 msgid "Emails: support@exclusive.com"
 msgstr ""
 
-#: store/templates/favorite_products/favorite_products.html:26
+#: store/templates/favorite_products/favorite_products.html:15
+msgid "Favorite products"
+msgstr ""
+
+#: store/templates/favorite_products/favorite_products.html:16
+msgid "Clear products"
+msgstr ""
+
+#: store/templates/favorite_products/favorite_products.html:32
 msgid "Delete from favorites"
+msgstr ""
+
+#: store/templates/favorite_products/favorite_products.html:45
+msgid "There are no products in favorites"
 msgstr ""
 
 #: store/templates/home/home.html:17
@@ -517,6 +590,24 @@ msgstr ""
 msgid "SmartWatch"
 msgstr ""
 
+#: store/templates/inactive_user/inactive_user.html:12
+msgid "Welcome"
+msgstr ""
+
+#: store/templates/inactive_user/inactive_user.html:16
+msgid ""
+"\n"
+"        You have not confirmed your account. Please check your inbox (and"
+" your spam\n"
+"        folder) - you should have received an email with a confirmation "
+"link.\n"
+"        "
+msgstr ""
+
+#: store/templates/inactive_user/inactive_user.html:25
+msgid "Didn't get the email"
+msgstr ""
+
 #: store/templates/register/register.html:18
 msgid "Create an account"
 msgstr ""
@@ -529,15 +620,33 @@ msgstr ""
 msgid "Enter your details below"
 msgstr ""
 
-#: store/templates/register/register.html:35
+#: store/templates/register/register.html:36
 msgid "Already have account?"
 msgstr ""
 
-#: store/templates/register/register.html:36
+#: store/templates/register/register.html:37
 msgid "Log in"
 msgstr ""
 
-#: store/templates/register/register.html:47
+#: store/templates/register/register.html:48
 msgid "Forgot Password?"
+msgstr ""
+
+#: store/templates/reset_password/reset_request.html:12
+msgid "Forgot password"
+msgstr ""
+
+#: store/templates/reset_password/reset_request.html:21
+msgid ""
+"If you did not give us a real email address when you created your "
+"account, we cannot send you an email"
+msgstr ""
+
+#: store/templates/reset_password/reset_request.html:28
+msgid "Submit"
+msgstr ""
+
+#: store/templates/search_results/search_results.html:28
+msgid "No products found."
 msgstr ""
 

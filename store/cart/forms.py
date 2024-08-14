@@ -1,9 +1,9 @@
 from flask_wtf import FlaskForm
 from wtforms.validators import InputRequired, NumberRange
-from wtforms import FieldList, FormField, IntegerField, SubmitField, HiddenField
+from wtforms import FieldList, FormField, IntegerField, SubmitField, HiddenField, Form
 from flask_babel import lazy_gettext
 
-class CartItemForm(FlaskForm):
+class CartItemForm(Form):
     new_amount = IntegerField('Amount', validators=[InputRequired(), NumberRange(min=1, max=100)])
     item_id = HiddenField('Item ID')  
 

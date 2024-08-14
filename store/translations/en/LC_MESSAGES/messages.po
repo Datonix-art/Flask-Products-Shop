@@ -581,3 +581,97 @@ msgstr ""
 
 msgid "Address"
 msgstr ""
+
+#: store/templates/register/register.html:48
+msgid "Forgot Password?"
+msgstr ""
+
+#: store/templates/reset_password/reset_request.html:12
+msgid "Forgot password"
+msgstr ""
+
+#: store/templates/reset_password/reset_request.html:21
+msgid ""
+"If you did not give us a real email address when you created your "
+"account, we cannot send you an email"
+msgstr ""
+
+#: store/templates/reset_password/reset_request.html:28
+msgid "Submit"
+msgstr ""
+
+#: store/templates/search_results/search_results.html:28
+msgid "No products found."
+msgstr ""
+
+msgid "Enter your email to reset your password"
+msgstr ""
+
+msgid "Email"
+msgstr ""
+
+msgid "An email has been sent with instructions to reset your password. "
+msgstr ""
+
+msgid "That email account is not associated with any account."
+msgstr ""
+
+msgid "This is an invalid or expired token."
+msgstr ""
+
+msgid "Your password has been updated!"
+msgstr ""
+
+msgid "Account is already verified."
+msgstr ""
+
+msgid "You have verified your account. Thanks!"
+msgstr ""
+
+msgid "The confirmation link is invalid or has expired."
+msgstr ""
+
+msgid "Your account is already verified"
+msgstr ""
+
+msgid "A new confirmation email has been sent."
+msgstr ""
+
+msgid "Confirm password"
+msgstr ""
+
+msgid "New password"
+msgstr ""
+
+msgid "Confirm new password"
+msgstr ""
+
+msgid "Reset password"
+msgstr ""
+
+msgid "Please log in to access this page."
+msgstr ""
+
+msgid "Please confirm your email"
+msgstr ""
+
+msgid "Welcome! Thanks for signing up. Please follow this link to activate your account:"
+msgstr ""
+
+msgid "Cheers!"
+msgstr ""
+
+msgid "Exclusive shop password reset request"
+msgstr ""
+
+msgid "To reset your password, visit the following link"
+msgstr ""
+
+msgid "If you did not make this request then simply ignore this email"
+msgstr ""
+
+msgid "Email or password is incorrect. Please try again."
+msgstr ""
+
+msgid "New Password"
+msgstr ""

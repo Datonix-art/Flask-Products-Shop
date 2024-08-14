@@ -83,12 +83,12 @@ def add_to_favorite(product_id):
         favorite_product = FavoriteProductModel(product_id=product_id, user_id=current_user.id)
         favorite_product.create()
         flash('Succesfully added product to favorites', 'success')
-    return redirect(url_for('shop_bp.favorite_products'))   
+    return redirect(url_for('shop_bp.favorite_products', page_id=1))   
     
-@shop_bp.route('/favorite_products')
+@shop_bp.route('/favorite_products/<int:page_id>')
 @login_required
-def favorite_products():
-    favorite_products = FavoriteProductModel.query.filter_by(user_id=current_user.id).all()
+def favorite_products(page_id):
+    favorite_products = FavoriteProductModel.query.filter_by(user_id=current_user.id).paginate(per_page=8, page=page_id)
     return render_template('base.html', favorite_products=favorite_products)
 
 @shop_bp.route('/delete_from_favorites/<int:product_id>')
@@ -98,7 +98,7 @@ def delete_from_favorites(product_id):
     db.session.delete(product)
     db.session.commit()
     flash('Succesfully deleted product from favorites', 'success')
-    return redirect(url_for('shop_bp.favorite_products'))
+    return redirect(url_for('shop_bp.favorite_products', page_id=1))
 
 @shop_bp.route('/clear_favorites', methods=['GET', 'POST'])
 @login_required
@@ -107,7 +107,7 @@ def clear_favorites():
     for product in products:
         product.delete()
     flash('Favorites cleared succesfully', 'success')
-    return redirect(url_for('shop_bp.favorite_products'))
+    return redirect(url_for('shop_bp.favorite_products', page_id=1))
 
 @shop_bp.route('/product_details/<int:id>', methods=['GET', "POST"])
 def inner_product(id):
@@ -123,38 +123,3 @@ def category_product(category_id, page_id):
     category_product = ProductModel.query.filter_by(category_id=category.id).paginate(per_page=8, page=page_id)
     return render_template('base.html', category=category, category_product=category_product)
 
-@shop_bp.route('/checkout', methods=['GET', 'POST'])
-@login_required
-def checkout():
-    form = CheckoutForm()
-    user_id = current_user.id
-    cart_items = CartModel.query.filter_by(user_id=user_id).all()
-    products = []
-    total_price = 0
-
-    for item in cart_items:
-        product = ProductModel.query.get(item.product_id)
-        product.amount = item.amount
-        total_price += product.amount * product.price
-        products.append(product)
-
-    if form.validate_on_submit():
-        total_price = sum(product.price * item.amount for item in cart_items)
-
-        order = OrderModel(
-              user_id=user_id,
-              first_name=form.first_name.data,
-              company_name=form.company_name.data,
-              street_address=form.street_address.data,
-              apartment=form.apartment.data,
-              town_city=form.town_city.data,
-              number=form.number.data,
-              email=form.email.data,
-              total_price=total_price
-        )
-
-        order.create()
-
-        flash('Order created succesfully!', 'success')
-        return redirect(url_for('core_bp.base', order_id=order.id))
-    return render_template('base.html', form=form, total_price=total_price, cart=products)

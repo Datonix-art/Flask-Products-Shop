@@ -53,13 +53,8 @@
 }
 .category_product section .image-container .mainImg {
   width: 120px;
-  translate: -30px;
-}
-@media (max-width: 750px) {
-  .category_product section .image-container .mainImg {
-    width: 100%;
-    translate: -30px -30px;
-  }
+  height: auto;
+  translate: -3vw;
 }
 .category_product section h2 {
   margin-top: 1em;

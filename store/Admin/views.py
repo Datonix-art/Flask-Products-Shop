@@ -9,7 +9,8 @@ from store import admin, db
 import PIL
 import os
 
-# admin user: email = 'ProductShopAdmin123@gmail.com', password = 'ProductShopAdmin123@gmail.com', url='/admin_panel/'
+# https://github.com/pallets-eco/flask-admin/blob/master/examples/forms-files-images/app.py#L144-L162
+# admin user: email = '', password = '', url='/admin_panel/'
 
 class AdminModelView(AdminIndexView):
     def is_accessible(self):
@@ -24,10 +25,6 @@ try:
     os.makedirs(media_path)
 except OSError:
     pass
-
-"""
-https://github.com/pallets-eco/flask-admin/blob/master/examples/forms-files-images/app.py#L144-L162
-"""
 
 class ImageView(ModelView):
     def _list_thumbnail(view, context, model, name):

@@ -1,4 +1,4 @@
-from flask import Flask, redirect, render_template, request, session, url_for
+from flask import Flask, redirect, render_template, request, session, url_for, Response
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 from flask_babel import Babel, _, lazy_gettext
@@ -6,12 +6,18 @@ from flask_login import LoginManager
 from flask_admin import Admin
 from flask_wtf import CSRFProtect
 from flask_wtf.csrf import CSRFError
+from flask_mail import Mail
 from store.config import Config
+from dotenv import load_dotenv
+import os
+import stripe
 
+load_dotenv()
 csrf = CSRFProtect()
 db = SQLAlchemy()
 login_manager = LoginManager()
 babel = Babel()
+mail = Mail()
 admin = Admin(name='', template_mode='bootstrap4')
 
 def create_app():
@@ -23,14 +29,18 @@ def create_app():
     csrf.init_app(app)
 
     login_manager.init_app(app)
-    login_manager.login_view = 'core.signup'
+    login_manager.login_view = 'core_bp.signup'
     login_manager.login_message = lazy_gettext('Please log in to access this page.')
     login_manager.login_message_category = 'danger'
 
     app.config.from_object(Config)
 
+    mail.init_app(app)
+
+    stripe.api_key = os.getenv('STRIPE_SECRET_KEY')
+
     db.init_app(app)
-   
+
     from store.core.routes import core_bp
     from store.cart.routes import cart_bp
     from store.shop.routes import shop_bp
@@ -67,14 +77,12 @@ def create_app():
             session['lang'] = lang
         return redirect(request.referrer or url_for('core.base'))
     
-
     @app.context_processor
     def inject_locale():
         return {'get_locale': get_locale}
     
     from store.Admin.views import AdminModelView
     with app.test_request_context():
-
         admin.init_app(app, index_view=AdminModelView(name=lazy_gettext('Home'), template='admin/admin.html', url='/admin_panel'))
      
     return app

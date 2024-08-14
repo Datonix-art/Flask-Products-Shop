@@ -28,12 +28,13 @@
             {{ form.name() }}
             {{ form.email() }}
             {{ form.password() }}
+            {{ form.recaptcha() }}
             {{ form.createAcc() }}
           </div>
         </form>
         <div title="redirect to login" class="login">
           <p>{{ _('Already have account?') }}</p>
-          <a href="/login">{{ _('Log in') }}</a>
+          <a href="{{ url_for('core_bp.login')}}">{{ _('Log in') }}</a>
         </div>
       {% elif request.path == '/login' %}
         <form method="post">
@@ -43,7 +44,7 @@
             {{ form.password() }}
             <div>
               {{ form.logIn() }}
-              <a href="#">
+              <a href="/reset_password">
                 {{ _('Forgot Password?') }}
               </a>
             </div>

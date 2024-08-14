@@ -8,11 +8,15 @@
   min-height: 150vh;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 
   .billing_form {
-    width: 50%;
-    height: 100%;
-    
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto; 
+    padding: 20px;
+    box-sizing: border-box;
+
     h1 {
       font-family: $secondaryFont;
       padding-bottom: 40px;
@@ -41,7 +45,8 @@
         }
 
         input {
-          width: 80%;
+          width: 100%;
+          max-width: 100%;
           height: 50px;
           border: 0;
           border-radius: 4px;
@@ -64,10 +69,11 @@
   }
 
   .billing_details {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
     padding-top: 4em;
-    width: 50%;
-    height: 100%;
-    @include flexbox(column, space-between, center, wrap);
+    @include flexbox(column, center, center, wrap);
 
     .cart_items {
       width: 100%;
@@ -76,7 +82,8 @@
 
       .item {
         @include flexbox(row, space-between, center, wrap);
-        width: 70%;
+        width: 100%;
+        max-width: 500px;
         gap: 22px;
         
         a {
@@ -90,9 +97,11 @@
     }
 
     .checkout_total {
-      width: 470px;
-      height: 324px;
-      
+      width: 100%;
+      max-width: 470px;
+      height: auto;
+      box-sizing: border-box;
+
       .container {
         padding: 32px 24px;
         font-family: $primaryFont;
@@ -121,7 +130,8 @@
     }
 
     .submitting_section {
-      width: 110%;
+      width: 100%;
+      max-width: 600px; // Maximum width for the section
       padding-top: 2em;
       @include flexbox(column, center, flex-start, wrap);
       gap: 32px;
@@ -131,7 +141,8 @@
         gap: .5em; 
 
         input {
-          width: 50%;
+          width: 100%;
+          max-width: 200px; // Ensure input doesn’t get too wide
           padding: 1em 0;
           padding-left: 1em;
         }
@@ -153,5 +164,64 @@
         }
       }
     }
+  }
+}
+
+// Responsive design
+@media (max-width: 768px) {
+  .checkout {
+    padding: 60px 20px;
+    flex-direction: column;
+
+    .billing_form,
+    .billing_details {
+      width: 100%;
+      max-width: none;
+    }
+
+    .billing_details {
+      padding-top: 2em;
+    }
+  }
+
+  .billing_form form div input {
+    width: 100%;
+  }
+
+  .submitting_section .coupon {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .submitting_section .coupon input {
+    max-width: none;
+    margin-bottom: 1em;
+  }
+
+  .submitting_section .checkout-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .checkout {
+    padding: 40px 10px;
+  }
+
+  .billing_form h1 {
+    font-size: 28px;
+  }
+
+  .billing_form form div label {
+    font-size: 0.875rem;
+  }
+
+  .billing_details .checkout_total .info p {
+    font-size: 0.875rem;
+  }
+
+  .submitting_section .checkout-btn {
+    padding: 1em;
+    font-size: 0.875rem;
   }
 }

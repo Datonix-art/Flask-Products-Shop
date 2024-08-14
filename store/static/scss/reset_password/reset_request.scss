@@ -1,0 +1,95 @@
+@import '../abstracts/attributes';
+@import '../abstracts/mixins';
+@import '../abstracts/placeholders';
+
+body {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+
+.flash_message {
+  margin-top: 2em;
+  width: 80%;
+}
+
+.reset_request {
+ @extend %width;
+ @include flexbox(column, center, center, wrap);
+ text-align: center;
+ padding: 1.5em 0;
+ 
+ h1 {
+  font-size: min(3vw, 60px); // https://jacobpadilla.com/articles/responsive-font-sizing-in-css
+  font-weight: bold;
+  font-family: $primaryFont;
+  padding: 1em 0;
+  letter-spacing: 1px;
+  color: black
+ }
+
+ .form-container {
+  @include flexbox(column, center, flex-start, wrap);
+  margin-inline: auto;
+  gap: 1em;
+  width: 40%;
+  text-align: start;
+  .bg-image-container {
+    @include flexcenter();
+    justify-content: center;
+    width: 100%;
+
+    .bg-image {
+      width: 50%;
+    }
+  }
+  
+  .warning {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 1em;
+    border: 2px solid black;
+    padding: .5em;
+   
+    img {
+      width: 20%;
+      height: 20%;
+    }
+    
+    p {
+      font-size: 12px;
+      font-weight: 400;
+      word-spacing: 1px;
+      color: black;
+    }
+  }
+  .input-title {
+    min-width: fit-content;
+    color: black;
+  }
+  input {
+    width: 100%;
+    text-indent: 1rem;
+    padding: .5em 0;
+    border: 1px solid black;
+  }
+  button {
+    width: 100%;
+    height: 40px;
+    background-color: transparent;
+    border: 1px solid black;
+    border-radius: 3px;
+    color: black;
+    cursor: pointer;
+    transition: .5s all ease-in-out;
+ 
+    &:hover {
+      color: $red;
+      border: 1px solid $red;
+    }
+  }
+ }
+}
+}

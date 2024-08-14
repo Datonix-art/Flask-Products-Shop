@@ -9,10 +9,14 @@
   min-height: 150vh;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 .checkout .billing_form {
-  width: 50%;
-  height: 100%;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
 }
 .checkout .billing_form h1 {
   font-family: "Inter";
@@ -48,7 +52,8 @@
   font-size: 1rem;
 }
 .checkout .billing_form form div input {
-  width: 80%;
+  width: 100%;
+  max-width: 100%;
   height: 50px;
   border: 0;
   border-radius: 4px;
@@ -67,12 +72,13 @@
   height: 20px;
 }
 .checkout .billing_details {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
   padding-top: 4em;
-  width: 50%;
-  height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
 }
@@ -91,7 +97,8 @@
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  width: 70%;
+  width: 100%;
+  max-width: 500px;
   gap: 22px;
 }
 .checkout .billing_details .cart_items .item a {
@@ -105,8 +112,10 @@
   margin-right: 1em;
 }
 .checkout .billing_details .checkout_total {
-  width: 470px;
-  height: 324px;
+  width: 100%;
+  max-width: 470px;
+  height: auto;
+  box-sizing: border-box;
 }
 .checkout .billing_details .checkout_total .container {
   padding: 32px 24px;
@@ -135,7 +144,8 @@
   margin-bottom: 1em;
 }
 .checkout .billing_details .submitting_section {
-  width: 110%;
+  width: 100%;
+  max-width: 600px;
   padding-top: 2em;
   display: flex;
   flex-direction: column;
@@ -153,7 +163,8 @@
   gap: 0.5em;
 }
 .checkout .billing_details .submitting_section .coupon input {
-  width: 50%;
+  width: 100%;
+  max-width: 200px;
   padding: 1em 0;
   padding-left: 1em;
 }
@@ -170,4 +181,51 @@
   background-color: white;
   border: 1px solid #db4444;
   color: #db4444;
+}
+
+@media (max-width: 768px) {
+  .checkout {
+    padding: 60px 20px;
+    flex-direction: column;
+  }
+  .checkout .billing_form,
+  .checkout .billing_details {
+    width: 100%;
+    max-width: none;
+  }
+  .checkout .billing_details {
+    padding-top: 2em;
+  }
+  .billing_form form div input {
+    width: 100%;
+  }
+  .submitting_section .coupon {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .submitting_section .coupon input {
+    max-width: none;
+    margin-bottom: 1em;
+  }
+  .submitting_section .checkout-btn {
+    width: 100%;
+  }
+}
+@media (max-width: 480px) {
+  .checkout {
+    padding: 40px 10px;
+  }
+  .billing_form h1 {
+    font-size: 28px;
+  }
+  .billing_form form div label {
+    font-size: 0.875rem;
+  }
+  .billing_details .checkout_total .info p {
+    font-size: 0.875rem;
+  }
+  .submitting_section .checkout-btn {
+    padding: 1em;
+    font-size: 0.875rem;
+  }
 }/*# sourceMappingURL=checkout.css.map */

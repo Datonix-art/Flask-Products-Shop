@@ -12,7 +12,7 @@ def truncate(s, length=15):
         return s[:length] + '...'
     return s
 
-@cart_bp.route('/cart_bp')
+@cart_bp.route('/cart')
 @login_required
 def shopping_cart():
     user_id = current_user.id
@@ -58,7 +58,7 @@ def remove_from_cart(product_id):
 
 @cart_bp.route('/cart/clear_cart', methods=['GET', 'POST'])
 @login_required
-def cleart_cart():
+def clear_cart():
     user_id = current_user.id
     cart_items = CartModel.query.filter_by(user_id=user_id).all()
 
@@ -73,7 +73,7 @@ def cleart_cart():
 def update_cart():
       user_id = current_user.id
       cart_items = CartModel.query.filter_by(user_id=user_id).all()
-      form = CartForm(request.form)
+      form = CartForm()
 
       if form.validate_on_submit():
           total_price = 0
@@ -83,7 +83,7 @@ def update_cart():
 
               print(f"item_id: {item_id}, new_amount: {new_amount}")
 
-              cart_item = None
+              cart_item = ''
 
               for item in cart_items:
                   if item.product_id == item_id:

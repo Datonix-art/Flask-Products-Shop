@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+  <div class="flash_message">
+    {% for category, message in get_flashed_messages(with_categories=true) %}
+      <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    {% endfor %}
+  </div>
+  <section class="reset_request">
+    <h1>{{ _("Forgot password") }}</h1>
+    <form method="post">
+      {{ form.hidden_tag() }}
+      <div class="form-container">
+        <div class="bg-image-container">
+          <img src="{{ url_for('static', filename='images/6c7044335d43831eaf92e9862f42656b-security-key.png')}}" alt="bg-image" class="bg-image">
+        </div>
+        <div class="warning">
+          <img src="{{ url_for('static', filename='images/warning_24dp_000000_FILL0_wght400_GRAD0_opsz24.png')}}" alt="warning image">
+          <p>{{ _('If you did not give us a real email address when you created your account, we cannot send you an email') }}.</p>
+        </div>
+        {{ form.email.label(class='input-title') }}
+        {{ form.email }}
+        {% for error in form.email.errors %}
+           <span>{{ error }}</span>
+        {% endfor %}
+        <button type="submit">{{ _('Submit') }}</button>
+      </div>
+    </form>
+  </section>
+{% endblock %}

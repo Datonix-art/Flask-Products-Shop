@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+  <section class="verification">
+    <p>
+      {{ _("
+      Welcome! Thanks for signing up. Please follow this link to activate your
+      account
+      ") }}:
+    </p>
+    <p><a href="{{ verify_url }}">{{ verify_url }}</a></p>
+    <br />
+    <p>{{ _("Cheers!") }}</p>
+  </section>
+{% endblock %}

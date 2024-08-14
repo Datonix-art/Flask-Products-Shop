@@ -4,7 +4,7 @@
   <section class="checkout">
      <div class="billing_form">
        <h1>{{ _('Billing Details') }}</h1>
-       <form action="{{ url_for('shop.checkout') }}" method="post" id="checkoutForm">
+       <form action="{{ url_for('payment_bp.checkout') }}" method="post" id="checkoutForm">
          {{ form.hidden_tag() }}
          <div>
            {{ form.first_name.label() }}
@@ -73,10 +73,42 @@
               <input type="text" placeholder="{{ _('Coupon Code') }}" min="6" max="6">
               <button type="submit" class="checkout-btn">{{ _('Apply Coupon') }}</button>
             </section>
-            {{ form.place_order(form='checkoutForm', class='checkout-btn') }}
+            <button type="button" class='checkout-btn' id='checkout-btn' form="checkoutForm">{{ _('Place Order') }}</button>
           </div>
          </section>
         </div>
      </div>
   </section>
+  <script src="https://js.stripe.com/v3/"></script>
+  <script>
+    let stripe = Stripe('{{ stripe_public_key }}')
+    let checkoutBtn = document.getElementById('checkout-btn')
+
+    checkoutBtn.addEventListener('click', function (event) {
+      event.preventDefault()
+      fetch('/checkout', {
+        method: 'POST',
+        headers: {
+           'Content-Type': 'application/json',
+           'X-CSRFToken': '{{ form.csrf_token._value() }}'
+        },
+        body: JSON.stringify({
+          first_name: document.getElementById('checkoutForm').first_name.value,
+          company_name: document.getElementById('checkoutForm').company_name.value,
+          street_address: document.getElementById('checkoutForm').street_address.value,
+          apartment: document.getElementById('checkoutForm').apartment.value,
+          town_city: document.getElementById('checkoutForm').town_city.value,
+          number: document.getElementById('checkoutForm').number.value,
+          email: document.getElementById('checkoutForm').email.value
+        })
+      })
+      .then((result) => { return result.json(); })
+      .then((data) => {
+        return stripe.redirectToCheckout({ sessionId: data.sessionId})
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+    })
+  </script>
 {% endblock%}

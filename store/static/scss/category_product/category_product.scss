@@ -43,12 +43,8 @@
 
     .mainImg {
       width: 120px;
-      translate: -30px;
-
-      @media (max-width: 750px) {
-        width: 100%;
-        translate: -30px -30px;
-      }
+      height: auto;
+      translate: -3vw;
     }
   }
 

@@ -23,13 +23,16 @@ class UserModel(db.Model, BaseModel, UserMixin):
    email = db.Column(db.String, nullable=False, unique=True)
    address = db.Column(db.String, nullable=True)
    password = db.Column(db.String, nullable=False, unique=False)
+   is_verified = db.Column(db.Boolean, nullable=False, default=False)
+   verified_on = db.Column(db.Boolean, nullable=True)
 
-   def __init__(self, firstName, lastName, email, address, password):
+   def __init__(self, firstName, lastName, email, address, password, is_verified=False):
       self.firstName = firstName
       self.lastName = lastName
       self.email = email
       self.address = address
       self.password = generate_password_hash(password)
+      self.is_verified = is_verified
 
    def check_password(self, password):
       return check_password_hash(self.password, password)

@@ -20,7 +20,7 @@ msgstr ""
 
 #: store/core/routes.py:27
 msgid "Succesfully sent message!"
-msgstr "წარმატებულად გაგზავნეთ მესიჯი!"
+msgstr "წარმატებიდ გაიგზავნა მესიჯი!"
 
 #: store/core/routes.py:41
 msgid "Succesfull sign up. Please Login"
@@ -28,7 +28,7 @@ msgstr "წარმატებული რეგისტრაცია. გ
 
 #: store/core/routes.py:44
 msgid "Account with this email already exists. Please sign up with other one"
-msgstr "ანგარიში ამ ელფოსტით უკვე არსებობს. გთხოვთ დარეგისტრირდეთ სხვა ელ-ფოსტით"
+msgstr "ანგარიში ამ ელ-ფოსტით უკვე არსებობს. გთხოვთ დარეგისტრირდეთ სხვა ელ-ფოსტით"
 
 #: store/core/routes.py:54
 msgid "succesfull login!"
@@ -48,7 +48,7 @@ msgstr "ცვლილებები წარმატებით შენ�
 
 #: store/core/routes.py:98
 msgid "Account already exists with this email"
-msgstr "ანგარიში უკვე არსებობს ამ ელფოსტით"
+msgstr "ანგარიში ამ ელფოსტით უკვე არსებობს"
 
 #: store/templates/base_footer.html:6 store/templates/base_header.html:19
 msgid "Exclusive"
@@ -60,7 +60,7 @@ msgstr "გამოწერა"
 
 #: store/templates/base_footer.html:8
 msgid "Get 10 off your first order"
-msgstr "მიიღეთ 10 პროცენტი ფასდაკლება პირველ შეკვეთაზე"
+msgstr "მიიღეთ 10 პროცენტიანი ფასდაკლება პირველ შეკვეთაზე"
 
 #: store/templates/base_footer.html:17
 msgid "Support"
@@ -131,7 +131,7 @@ msgstr "დაზოგეთ $3 ახალი მომხმარებლ�
 msgid "Summer Sale For All Swim Suits And Free Express Delivery - OFF 50"
 msgstr ""
 "ზაფხულის გაყიდვები ყველა საცურაო კოსტიუმისთვის და უფასო ექსპრეს მიწოდება "
-"- 50 პროცენტი ფასდაკლება"
+"- 50 პროცენტიანი ფასდაკლება"
 
 #: store/templates/base_header.html:8
 msgid "ShopNow"
@@ -159,7 +159,7 @@ msgstr "ჩემი ანგარიშის მართვა"
 
 #: store/templates/base_header.html:78
 msgid "My Order"
-msgstr "ჩემი შეკვეთა"
+msgstr "ჩემი შეკვეთები"
 
 #: store/templates/base_header.html:82
 msgid "Log out"
@@ -290,7 +290,7 @@ msgstr "24/7 მომსახურება მომხმარებლე
 
 #: store/templates/about/about.html:118 store/templates/home/home.html:153
 msgid "Friendly 24/7 customer support"
-msgstr "მეგობრული 24/7 მომსახურება მომხმარებლებს"
+msgstr "24/7 მომსახურება მომხმარებლებს"
 
 #: store/templates/about/about.html:128 store/templates/home/home.html:163
 msgid "MONEY BACK GUARANTEE"
@@ -310,7 +310,7 @@ msgstr "ჩემი პროფილი"
 
 #: store/templates/account/account.html:26
 msgid "My Payment Options"
-msgstr "ჩემი გადახდის ვარიანტები"
+msgstr "ჩემი გადახდის მეთოდები"
 
 #: store/templates/account/account.html:29
 msgid "Address Book"
@@ -429,7 +429,7 @@ msgstr "მოგვწერეთ"
 
 #: store/templates/contacts/contacts.html:29
 msgid "Fill out our form and we will contact you within 24 hours."
-msgstr "შეავსეთ ჩვენი ფორმა და ჩვენ დაგვეკონტაქტებით 24 საათში."
+msgstr "შეავსეთ ჩვენი ფორმა და ჩვენ შეგეხმიანებით 24 საათში."
 
 #: store/templates/contacts/contacts.html:30
 msgid "Emails: customer@exclusive.com"
@@ -449,7 +449,7 @@ msgstr "10 პროცენტამდე ფასდაკლების �
 
 #: store/templates/home/home.html:20
 msgid "Shop Now"
-msgstr "იშოპე ახლა"
+msgstr "შეიძინეთ ახლავე"
 
 #: store/templates/home/home.html:30
 msgid "Today's"
@@ -521,7 +521,7 @@ msgstr "შეიყვანეთ თქვენი დეტალები 
 
 #: store/templates/register/register.html:35
 msgid "Already have account?"
-msgstr "უკვე გაქვს ანგარიში?"
+msgstr "უკვე გაქვთ ანგარიში?"
 
 #: store/templates/register/register.html:36
 msgid "Log in"
@@ -529,7 +529,7 @@ msgstr "შესვლა"
 
 #: store/templates/register/register.html:47
 msgid "Forgot Password?"
-msgstr "დავიწყებით პაროლი?"
+msgstr "დაგავიწყდათ პაროლი?"
 
 msgid "name"
 msgstr "სახელი"
@@ -586,16 +586,13 @@ msgid "Password Changes"
 msgstr "პაროლის ცვლილება"
 
 msgid "Current Password"
-msgstr "დავიწყებით პაროლი?"
+msgstr "მიმდინარე პაროლი"
 
 msgid "password"
 msgstr "პაროლი"
 
-msgid "New Password"
-msgstr "პაროლი"
-
 msgid "Confirm New Password"
-msgstr "დავიწყებით პაროლი?"
+msgstr "დაადასტურეთ ახალი პაროლი"
 
 msgid "Save Changes"
 msgstr "ცვლილებების შენახვა"
@@ -628,7 +625,7 @@ msgid "Phone Number*"
 msgstr "ტელეფონის ნომერი"
 
 msgid "Email*"
-msgstr "ელ. ფოსტა"
+msgstr "ელ-ფოსტა*"
 
 msgid "Place Order"
 msgstr "შეკვეთა"
@@ -662,3 +659,99 @@ msgstr "ელ-ფოსტა"
 
 msgid "Address"
 msgstr "მისამართი"
+
+#: store/templates/register/register.html:48
+msgid "Forgot Password?"
+msgstr "დაგავიწყდათ პაროლი?"
+
+#: store/templates/reset_password/reset_request.html:12
+msgid "Forgot password"
+msgstr "პაროლის დავიწყება"
+
+#: store/templates/reset_password/reset_request.html:21
+msgid ""
+"If you did not give us a real email address when you created your "
+"account, we cannot send you an email"
+msgstr ""
+"თუ თქვენ არ მოგვცემთ თქვენ ნამდვილ ელ-ფოსტის მისამართს როდესაც თქვენ შექმენით თქვენი"
+"ანგარიში, მაშინ ჩვენ ვერ შევძლებთ მეილის გამოგზავნას"
+
+#: store/templates/reset_password/reset_request.html:28
+msgid "Submit"
+msgstr "დამასხოვრება"
+
+#: store/templates/search_results/search_results.html:28
+msgid "No products found."
+msgstr "პროდუქტები ვერ მოიძებნა."
+
+msgid "Enter your email to reset your password"
+msgstr "შეიყვანეთ თქვენი ელ-ფოსტა თქვენი პაროლის აღსადგენად"
+
+msgid "Email"
+msgstr "ელ-ფოსტა"
+
+msgid "An email has been sent with instructions to reset your password."
+msgstr "ემაილი გაგზავნილია თქვენს მიერ მითითებულ ელ-ფოსტაზე პაროლის აღდგენის ინსტრუქციით."
+
+msgid "That email account is not associated with any account."
+msgstr "ეს ელ-ფოსტის ანგარიში არ არის დაკავშირებული არცერთ ანგარიშთან."
+
+msgid "This is an invalid or expired token."
+msgstr "ეს არის არასწორი ან ვადაგასული ტოკენი."
+
+msgid "Your password has been updated!"
+msgstr "თქვენი პაროლი განახლდა!"
+
+msgid "Account is already verified."
+msgstr "ანგარიში უკვე გადამოწმებულია."
+
+msgid "You have verified your account. Thanks!"
+msgstr "თქვენი ანგარი გადამოწმებული. მადლობა!"
+
+msgid "The confirmation link is invalid or has expired."
+msgstr "დადასტურების ბმული არასწორია ან ამოიწურა."
+
+msgid "Your account is already verified"
+msgstr "თქვენი ანგარიში უკვე გადამოწმებულია"
+
+msgid "A new confirmation email has been sent."
+msgstr "გაიგზავნა ახალი დადასტურების მეილი."
+
+msgid "Confirm password"
+msgstr "დაადასტურეთ პაროლი"
+
+msgid "New password"
+msgstr "ახალი პაროლი"
+
+msgid "Confirm new password"
+msgstr "დაადასტურეთ ახალი პაროლი"
+
+msgid "Reset password"
+msgstr "პაროლის აღდგენა"
+
+msgid "Please log in to access this page."
+msgstr "გთხოვს დარეგისტრირდეთ ამ გვერდზე შესასვლელად."
+
+msgid "Please confirm your email"
+msgstr "გთხოვთ დაადასტუროთ თქვენი ელ-ფოსტა"
+
+msgid "Welcome! Thanks for signing up. Please follow this link to activate your account"
+msgstr "მოგესალმებით! მადლობა დარეგისტრირებისთვის. გთხოვთ, მიჰყევით ამ ბმულს თქვენი ანგარიშის გასააქტიურებლად"
+
+msgid "Cheers!"
+msgstr "გმადლობთ!"
+
+msgid "Exclusive shop password reset request"
+msgstr "Exclusive მაღაზიის პაროლის აღდგენის მოთხოვნა"
+
+msgid "To reset your password, visit the following link"
+msgstr "რომ აღადგინოთ თქვენი პაროლი, ეწვიეთ ამ ბმულს"
+
+msgid "If you did not make this request then simply ignore this email"
+msgstr "თუ ეს მოთხოვნა თქვენ არ გააკეთეთ, უბრალოდ დააიგნორეთ ეს წერილი"
+
+msgid "Email or password is incorrect. Please try again."
+msgstr "ელ-ფოსტა ან პაროლი არასწორია. გთხოვს ცადოთ ხელახლა"
+
+msgid "New Password"
+msgstr "ახალი პაროლი"

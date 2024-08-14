@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+  <section class="search_results">
+    {% if search_results %}
+     <section class="products-container">
+       {% for result in search_results %}
+        <section> 
+          <div class="image-container">
+            <div class="product_actions">
+              <div class="action-container">
+                <a href="/add_to_favorite/{{ result.id }}">
+                  <img src="{{ url_for('static', filename='images/favorite_24dp_FILL0_wght400_GRAD0_opsz24.png') }}" alt="favorite">
+                </a>
+                <a href="/product_details/{{ result.id }}">
+                  <img src="{{ url_for('static', filename='images/visibility_24dp_FILL0_wght400_GRAD0_opsz24.png') }}" alt="vissibility">
+                </a>
+              </div>
+            </div>
+            <img src="{{ url_for('static', filename='images/product_images/' + result.image) }}" alt="{{ result.name }}" class="mainImg">   
+          </div>
+          <h2>{{ result.name }}</h2>
+          <span>${{ result.price }}</span>
+          <a href="/{{ result.id }}/add_to_cart" class="cartbtn">{{ _('Add To Cart') }}</a>
+        </section>
+       {% endfor %}
+      </section>
+    {% else %}
+      <p>{{ _('No products found.') }}</p>
+    {% endif %}
+  </section>
+{% endblock %}

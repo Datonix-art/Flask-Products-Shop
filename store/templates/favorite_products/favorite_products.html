@@ -10,7 +10,13 @@
         </div>
       {% endfor %}
     </div>
-    {% for favorite_product in favorite_products %}
+    {% if favorite_products.items %}
+    <div class="products">
+      <h1>{{ _('Favorite products') }}</h1>
+      <a href="/clear_favorites" class="fav-clearBtn">{{ _('Clear products') }}</a>
+    </div>
+    <div class="fav-product-container">
+      {% for favorite_product in favorite_products %}
       <section> 
         <div class="image-container">
           <div class="product_actions">
@@ -18,14 +24,26 @@
               <img src="{{ url_for('static', filename='images/visibility_24dp_FILL0_wght400_GRAD0_opsz24.png') }}" alt="vissibility" width="30">
             </a>
           </div>
-          <img src="{{ url_for('static', filename='images/product_images/' + favorite_product.product.image) }}" alt="{{ favorite_product.product.name }}" class="mainImg" width="30">   
+          <img src="{{ url_for('static', filename='images/product_images/' + favorite_product.product.image) }}" alt="{{ favorite_product.product.name }}" class="mainImg">   
         </div>
         <h2>{{ favorite_product.product.name }}</h2>
         <span>${{ favorite_product.product.price }}</span>
         <a href="/{{ favorite_product.product_id }}/add_to_cart" class="cartbtn">{{ _('Add To Cart') }}</a>
-        <a href="/delete_from_favorites/{{ favorite_product.product_id }}">{{ _('Delete from favorites') }}</a>
+        <a href="/delete_from_favorites/{{ favorite_product.product_id }}" class="deletebtn">{{ _('Delete from favorites') }}</a>
       </section>
-    {% endfor %}
-    <a href="/clear_favorites">clear favorites</a>
+      {% endfor %}
+    </div>
+    <nav aria-label="Product nav">
+      <ul class="pagination">
+        {% for page in favorite_products.iter_pages() %}
+        <li class="page-item"><a class="page-link" href="/favorite_products/{{page}}">{{ page }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+    {% else %}
+    <div class="no-products">
+      <p class="text-center p-4">{{ _('There are no products in favorites') }}</p>
+    </div>
+    {% endif %}
   </section>
 {% endblock %}

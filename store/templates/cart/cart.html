@@ -21,7 +21,7 @@
       <section class="cart__item--container">
         
           <table class="cart__item--table">
-            <form method="post" action="{{ url_for('cart.update_cart') }}" id="cartForm" enctype="multipart/form-data">
+            <form method="post" action="{{ url_for('cart_bp.update_cart') }}" id="cartForm" enctype="multipart/form-data">
              {{ form.hidden_tag() }}
              <thead class="cart__item--title">
                <tr class="__item--container">
@@ -33,19 +33,18 @@
              </thead>
              <tbody class="cart__items">
                 {% for item in cart %}
-                  <tr class="__item--container">
+                  <tr class="__item--container">  
                     <th>
-                      <a href="/cart/{{ item.id }}/remove_from_cart" class="delete">
+                      <a href="{{ url_for('cart_bp.remove_from_cart', product_id=item.id) }}" class="delete">
                         x
                       </a>
-                      <a href="/product_details/{{ item.id }}" class="product">
+                      <a href="{{ url_for('shop_bp.inner_product', id=item.id) }}" class="product">
                         <img src="{{ url_for('static', filename='images/product_images/' + item.image )}}" alt="item image" width="70" height="70">{{ item.name |  truncate(15)}}
                       </a>
                     </th>
                     <th>${{ item.price }}</th>
                     <th class="amount">
                       {% for form_item in form.items %}
-                        {{ form_item.csrf_token() }}
                         {{ form_item.new_amount(value=item.amount, min=1, max=100) }}
                         {{ form_item.item_id(value=item.id) }}
                       {% endfor %}
@@ -59,11 +58,11 @@
 
           <section class="cart__footer">
             <div class="cart__redirects">
-              <a href="/home">
+              <a href="{{ url_for('core_bp.base') }}">
                 {{ _('Return To Shop') }}
               </a>
               
-              <a href="/cart/clear_cart">
+              <a href="{{ url_for('cart_bp.clear_cart') }}">
                 <button type="submit">{{ _('Clear Cart') }}</button>
               </a>
               
@@ -94,7 +93,7 @@
                     <p>${{ total_price }}</p>
                   </div>
                   <div class="primaryBTN--container">
-                    <a href="/checkout" class="primaryBTN-btn">{{ _('Proceed to checkout') }}</a>
+                    <a href="{{ url_for('payment_bp.checkout') }}" class="primaryBTN-btn">{{ _('Proceed to checkout') }}</a>
                   </div>
                 </div>
               </section>

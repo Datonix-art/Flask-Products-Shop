@@ -36,17 +36,18 @@
       <form class="contacts-form" method="post">
         {{ form.hidden_tag() }}
         <div class="form-container">
-        <div>
-          {{ form.name() }}
-          {{ form.email() }}
-          {{ form.phoneNumber() }}
-        </div>
-        <div>
-          {{ form.message() }}
-        </div> 
-        <div>
-           {{ form.submit() }}
-        </div>
+          <div>
+            {{ form.name() }}
+            {{ form.email() }}
+            {{ form.phoneNumber() }}
+          </div>
+          <div>
+            {{ form.message() }}
+          </div> 
+          <div class="recaptcha">
+            {{ form.submit(id='formPopup') }}
+            {{ form.recaptcha(id='captcha') }}
+          </div>
         </div>
       </form>
     </div>
