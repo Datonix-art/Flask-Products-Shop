@@ -60,3 +60,4 @@ Werkzeug==2.3.7
 WTForms==3.0.1
 WTForms-Components==0.10.5
 itsdangerous
+stripe
