@@ -6,3 +6,4 @@ store/cart/__pycache__
 store/core/__pycache__
 store/shop/__pycache__
 .vscode
+.env
