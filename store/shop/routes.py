@@ -3,8 +3,8 @@ from flask import Blueprint, jsonify, redirect, render_template, flash, current_
 from flask_login import login_required, current_user
 from store.shop.models import OrderModel, ProductModel, db, CategoryModel, FavoriteProductModel
 from store.shop.forms import BuyingForm, CheckoutForm
-from store.cart.models import CartModel
 from datetime import datetime, timedelta
+from flask_babel import _
 import json
 
 shop_bp = Blueprint('shop_bp', __name__, template_folder='templates')
@@ -78,11 +78,11 @@ def all_products(page_id):
 def add_to_favorite(product_id):
     product = FavoriteProductModel.query.filter_by(product_id=product_id, user_id=current_user.id).first()
     if product:
-        flash('Product is already added to the favorites', 'danger')
+        flash(_('Product is already added to the favorites'), 'danger')
     else:
         favorite_product = FavoriteProductModel(product_id=product_id, user_id=current_user.id)
         favorite_product.create()
-        flash('Succesfully added product to favorites', 'success')
+        flash(_('Succesfully added product to favorites'), 'success')
     return redirect(url_for('shop_bp.favorite_products', page_id=1))   
     
 @shop_bp.route('/favorite_products/<int:page_id>')
@@ -97,7 +97,7 @@ def delete_from_favorites(product_id):
     product = FavoriteProductModel.query.filter_by(product_id=product_id).first()
     db.session.delete(product)
     db.session.commit()
-    flash('Succesfully deleted product from favorites', 'success')
+    flash(_('Succesfully deleted product from favorites'), 'success')
     return redirect(url_for('shop_bp.favorite_products', page_id=1))
 
 @shop_bp.route('/clear_favorites', methods=['GET', 'POST'])
@@ -106,7 +106,7 @@ def clear_favorites():
     products = FavoriteProductModel.query.filter_by(user_id=current_user.id).all()
     for product in products:
         product.delete()
-    flash('Favorites cleared succesfully', 'success')
+    flash(_('Favorites cleared succesfully'), 'success')
     return redirect(url_for('shop_bp.favorite_products', page_id=1))
 
 @shop_bp.route('/product_details/<int:id>', methods=['GET', "POST"])

@@ -675,3 +675,24 @@ msgstr ""
 
 msgid "New Password"
 msgstr ""
+
+msgid "Cart updated successfully!"
+msgstr ""
+
+msgid "succesfully increased amount of product in cart"
+msgstr ""
+
+msgid "succesfully added product to the cart"
+msgstr ""
+
+msgid "Favorites cleared succesfully"
+msgstr ""
+
+msgid "Product is already added to the favorites"
+msgstr ""
+
+msgid "Succesfully added product to favorites" 
+msgstr ""
+
+msgid "Succesfully deleted product from favorites"
+msgstr ""

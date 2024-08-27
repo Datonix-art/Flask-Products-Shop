@@ -21,8 +21,8 @@
       <section class="cart__item--container">
         
           <table class="cart__item--table">
-            <form method="post" action="{{ url_for('cart_bp.update_cart') }}" id="cartForm" enctype="multipart/form-data">
-             {{ form.hidden_tag() }}
+            <form method="post" id="cartForm" action="{{ url_for('cart_bp.update_cart')}}">
+             <input type="hidden" value="{{ csrf_token() }}" name="csrf_token">
              <thead class="cart__item--title">
                <tr class="__item--container">
                 <td>{{ _('Product') }}</td>
@@ -44,10 +44,8 @@
                     </th>
                     <th>${{ item.price }}</th>
                     <th class="amount">
-                      {% for form_item in form.items %}
-                        {{ form_item.new_amount(value=item.amount, min=1, max=100) }}
-                        {{ form_item.item_id(value=item.id) }}
-                      {% endfor %}
+                      <input type="hidden" name="item_id" value="{{ item.id }}">
+                      <input type="number" name="item_amount" value="{{ item.amount }}" min="1" max="100">
                     </th>
                     <th>${{ item.price * item.amount }}</th>
                   </tr>
@@ -63,10 +61,12 @@
               </a>
               
               <a href="{{ url_for('cart_bp.clear_cart') }}">
-                <button type="submit">{{ _('Clear Cart') }}</button>
+                <button type="button">{{ _('Clear Cart') }}</button>
               </a>
               
-              {{ form.update_cart(form='cartForm') }}
+              <a>
+                <button type="submit" form="cartForm">{{ _('Update cart') }}</button>
+              </a>
             </div>
             
             <div class="cart__checkout_redirect">
