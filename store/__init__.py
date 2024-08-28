@@ -1,4 +1,4 @@
-from flask import Flask, redirect, render_template, request, session, url_for, Response
+from flask import Flask, redirect, render_template, request, session, url_for
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 from flask_babel import Babel, _, lazy_gettext
