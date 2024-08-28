@@ -6,6 +6,7 @@ flask_login
 flask_admin
 flask_mail
 flask_wtf
+dotenv
 wtforms
 itsdangerous
 stripe
