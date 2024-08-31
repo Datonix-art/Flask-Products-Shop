@@ -1,5 +1,5 @@
 Flask
-flask_sqlalchemy
+Flask-SQLAlchemy
 flask_cors
 flask_babel
 flask_login
