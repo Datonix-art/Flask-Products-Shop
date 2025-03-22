@@ -9,8 +9,6 @@ class ContactForm(FlaskForm):
     phoneNumber = IntegerField(lazy_gettext('Phone'), validators=[DataRequired()], render_kw={'placeholder': lazy_gettext('Your phone'), 'type': 'tel'})
     message = TextAreaField(lazy_gettext('Message'), validators=[DataRequired(), Length(min=15, max=400)], render_kw={'placeholder': lazy_gettext('Your message')})
     submit = SubmitField(lazy_gettext('Send message'))
-    # https://www.youtube.com/watch?v=fCezxcVMxec
-    # https://www.google.com/recaptcha/admin
     recaptcha = RecaptchaField()
 
 class SignUpForm(FlaskForm):
