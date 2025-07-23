@@ -106,10 +106,10 @@ python app.py
 The application will be avaiable at [http://127.0.0.1:5000/](http://127.0.0.1:5000/)
 # option 2: Run with Docker
 ```bash
-docker build -t Commerce-App .
+docker build -t commerce-app .
 ```
 ``` 
-docker run -d -p 5000:5000 Commerce-App 
+docker run -d -p 5000:5000 commerce-app 
 ```
 The application will be avaiable at [http://localhost:5000](http://localhost:5000)
 # Branding Notice
