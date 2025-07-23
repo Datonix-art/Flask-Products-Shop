@@ -1,5 +1,7 @@
 venv/
 .env/
+*.css
+*.css.map
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
