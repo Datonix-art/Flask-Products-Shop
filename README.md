@@ -42,10 +42,6 @@ pip install -r requirements.txt
 git clone https://github.com/Datonix-art/E-Commerce-Web-App.git
 cd E-Commerce-Web-App
 ```
-2. Build image
-```bash
-docker build -t Commerce-App .
-```
 # Environment Variables
 This project uses environment variables to manage sensitive data and configuration. Create a ```.env``` file in the project root directory and add the following variables:
 ## Required Environment Variables
@@ -109,6 +105,9 @@ python app.py
 ```
 The application will be avaiable at [http://127.0.0.1:5000/](http://127.0.0.1:5000/)
 # option 2: Run with Docker
+```bash
+docker build -t Commerce-App .
+```
 ``` 
 docker run -d -p 5000:5000 Commerce-App 
 ```
